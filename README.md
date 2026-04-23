@@ -39,23 +39,9 @@ SyntaxLab is a modern and responsive platform designed to help beginners learn p
 
 ---
 
-## 📂 Project Structure
+## 📂 Project Preview
 
-```bash
-syntaxlab-learning-platform/
-│── index.html
-│── html.html
-│── css.html
-│── javascript.html
-│── php.html
-│── c.html
-│── cpp.html
-│── java.html
-│── python.html
-│── sql.html
-│── style.css
-│── script.js
-```
+<img width="1357" height="889" alt="day_61" src="https://github.com/user-attachments/assets/e5dab82a-df8d-416c-acb9-0e79a0979e3e" />
 
 ---
 
@@ -75,12 +61,6 @@ Open `index.html` in your browser.
 🌙 Dark/Light mode toggle
 🔐 User authentication
 🧑‍💻 Live code editor
-
----
-
-## 👨‍💻 Author
-
-**Rishabh Shah**
 
 ---
 

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SyntaxLab | Learn JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo-area"><div class="logo-icon"><i class="fab fa-js"></i></div><span class="logo-text">SyntaxLab</span></div>
+        <div class="nav-links"><a href="index.html" class="nav-link">Home</a></div>
+    </div>
+</nav>
+
+<div class="language-container">
+    <div class="language-header">
+        <h1>Learn JavaScript</h1>
+        <p class="intro">JavaScript is the programming language of the web. It adds interactivity, dynamic content, and logic to websites.</p>
+    </div>
+
+    <div class="content-grid">
+        <aside class="topics-sidebar">
+            <h3><i class="fas fa-list-ul"></i> Topics</h3>
+            <ul class="topic-list">
+                <li><i class="fas fa-code"></i> Variables & Data Types</li>
+                <li><i class="fas fa-calculator"></i> Operators & Expressions</li>
+                <li><i class="fas fa-random"></i> Control Flow (if/else, loops)</li>
+                <li><i class="fas fa-cube"></i> Functions & Scope</li>
+                <li><i class="fas fa-list"></i> Arrays & Objects</li>
+                <li><i class="fas fa-exchange-alt"></i> DOM Manipulation</li>
+                <li><i class="fas fa-clock"></i> Events & Callbacks</li>
+                <li><i class="fas fa-cloud"></i> Async JavaScript (Promises)</li>
+            </ul>
+            <div class="progress-wrapper">
+                <div class="progress-label"><span>Progress</span><span class="progress-percent">0%</span></div>
+                <div class="progress-bar"><div class="progress-fill"></div></div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="topic-section">
+                <h2>📦 Variables & Data Types</h2>
+                <p>JavaScript variables store data values. Use let, const, or var. Data types include strings, numbers, booleans, and more.</p>
+                <div class="code-block"><pre>let name = "SyntaxLab";
+const year = 2025;
+var isAwesome = true;
+
+let count = 42;
+let price = 19.99;
+let languages = ["HTML", "CSS", "JS"];</pre></div>
+            </div>
+
+            <div class="topic-section">
+                <h2>🧮 Operators & Expressions</h2>
+                <p>Arithmetic, comparison, and logical operators help manipulate data.</p>
+                <div class="code-block"><pre>let sum = 10 + 5;
+let isEqual = (10 === 10);
+let isAdult = (age >= 18) ? "Yes" : "No";
+
+// Logical operators
+if (isLoggedIn &amp;&amp; hasPermission) {
+  console.log("Access granted");
+}</pre></div>
+            </div>
+
+            <div class="topic-section">
+                <h2>🔄 Control Flow</h2>
+                <p>Control the flow of execution with conditionals and loops.</p>
+                <div class="code-block"><pre>// if-else statement
+if (score >= 90) {
+  grade = 'A';
+} else if (score >= 70) {
+  grade = 'B';
+}
+
+// for loop
+for (let i = 0; i &lt; 5; i++) {
+  console.log("Count: " + i);
+}
+
+// while loop
+let counter = 0;
+while (counter &lt; 3) {
+  counter++;
+}</pre></div>
+            </div>
+
+            <div class="topic-section">
+                <h2>⚙️ Functions & Scope</h2>
+                <p>Functions are reusable blocks of code. Scope determines variable accessibility.</p>
+                <div class="code-block"><pre>function greet(name) {
+  return `Hello, ${name}!`;
+}
+
+const add = (a, b) => a + b;
+
+// Scope example
+let globalVar = "I'm global";
+
+function showVar() {
+  let localVar = "I'm local";
+  console.log(globalVar); // Accessible
+}</pre></div>
+            </div>
+
+            <div class="topic-section">
+                <h2>📊 Arrays & Objects</h2>
+                <p>Arrays store ordered lists. Objects store key-value pairs for structured data.</p>
+                <div class="code-block"><pre>// Array methods
+let fruits = ["apple", "banana", "orange"];
+fruits.push("grape");
+fruits.forEach(fruit => console.log(fruit));
+
+// Objects
+let user = {
+  name: "SyntaxMaster",
+  age: 25,
+  skills: ["JS", "React", "Node"]
+};
+
+console.log(user.name);</pre></div>
+            </div>
+
+            <div class="topic-section">
+                <h2>🎯 DOM Manipulation</h2>
+                <p>Interact with HTML elements dynamically using the Document Object Model.</p>
+                <div class="code-block"><pre>// Selecting elements
+const heading = document.querySelector('h1');
+heading.textContent = "Hello JavaScript!";
+
+// Creating elements
+const newDiv = document.createElement('div');
+newDiv.innerHTML = '&lt;p&gt;Dynamic content&lt;/p&gt;';
+document.body.appendChild(newDiv);</pre></div>
+            </div>
+
+            <div class="topic-section">
+                <h2>🎪 Events & Callbacks</h2>
+                <p>Respond to user actions like clicks, typing, and mouse movements.</p>
+                <div class="code-block"><pre>const button = document.getElementById('myButton');
+button.addEventListener('click', () => {
+  alert('Button clicked!');
+});
+
+// Input event
+input.addEventListener('input', (e) => {
+  console.log(e.target.value);
+});</pre></div>
+            </div>
+
+            <div class="topic-section">
+                <h2>☁️ Async JavaScript</h2>
+                <p>Handle asynchronous operations with Promises and async/await.</p>
+                <div class="code-block"><pre>// Promise example
+fetch('https://api.example.com/data')
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error(error));
+
+// Async/Await
+async function getData() {
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+}</pre></div>
+            </div>
+
+            <a href="index.html" class="back-home"><i class="fas fa-arrow-left"></i> Back to Home</a>
+        </main>
+    </div>
+</div>
+
+<footer class="footer"><p>© 2025 SyntaxLab | JavaScript - Bring your website to life.</p></footer>
+<script src="script.js"></script>
+</body>
+</html>

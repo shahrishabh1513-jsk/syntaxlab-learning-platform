@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SyntaxLab | Learn Java</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo-area"><div class="logo-icon"><i class="fab fa-java"></i></div><span class="logo-text">SyntaxLab</span></div>
+        <div class="nav-links"><a href="index.html" class="nav-link">Home</a></div>
+    </div>
+</nav>
+
+<div class="language-container">
+    <div class="language-header">
+        <h1>Learn Java</h1>
+        <p class="intro">Java is a versatile, object-oriented programming language used for web, mobile (Android), and enterprise applications.</p>
+    </div>
+
+    <div class="content-grid">
+        <aside class="topics-sidebar">
+            <h3><i class="fas fa-list-ul"></i> Topics</h3>
+            <ul class="topic-list">
+                <li><i class="fas fa-code"></i> Java Syntax & Setup</li>
+                <li><i class="fas fa-database"></i> Variables & Data Types</li>
+                <li><i class="fas fa-cube"></i> OOP Concepts (Classes)</li>
+                <li><i class="fas fa-children"></i> Inheritance & Interfaces</li>
+                <li><i class="fas fa-random"></i> Exception Handling</li>
+                <li><i class="fas fa-layer-group"></i> Collections Framework</li>
+                <li><i class="fas fa-thread"></i> Multithreading</li>
+                <li><i class="fas fa-file-alt"></i> File Handling</li>
+            </ul>
+            <div class="progress-wrapper">
+                <div class="progress-label"><span>Progress</span><span class="progress-percent">0%</span></div>
+                <div class="progress-bar"><div class="progress-fill"></div></div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="topic-section">
+                <h2>☕ Java Syntax & Setup</h2>
+                <p>Java programs run on JVM. Every application needs a main method.</p>
+                <div class="code-block"><pre>public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello, Java!");
+    }
+}</pre></div>
+            </div>
+
+            <div class="topic-section">
+                <h2>📦 Variables & Data Types</h2>
+                <p>Java is strongly typed. Primitive and reference types.</p>
+                <div class="code-block"><pre>int age = 25;
+double price = 19.99;
+char grade = 'A';
+boolean isActive = true;
+String name = "SyntaxLab";</pre></div>
+            </div>
+
+            <div class="topic-section">
+                <h2>🏗️ OOP Concepts (Classes)</h2>
+                <p>Classes blueprints for objects. Encapsulation with private fields and public methods.</p>
+                <div class="code-block"><pre>public class Student {
+    private String name;
+    private int age;
+    
+    public Student(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+    
+    public void display() {
+        System.out.println(name + " is " + age);
+    }
+}
+
+Student s1 = new Student("John", 20);
+s1.display();</pre></div>
+            </div>
+
+            <div class="topic-section">
+                <h2>🌳 Inheritance & Interfaces</h2>
+                <p>Extend classes with 'extends' and implement contracts with 'implements'.</p>
+                <div class="code-block"><pre>interface Drawable {
+    void draw();
+}
+
+class Circle implements Drawable {
+    public void draw() {
+        System.out.println("Drawing circle");
+    }
+}
+
+class Vehicle {
+    void start() {
+        System.out.println("Vehicle started");
+    }
+}</pre></div>
+            </div>
+
+            <div class="topic-section">
+                <h2>⚠️ Exception Handling</h2>
+                <p>Handle errors using try-catch-finally blocks.</p>
+                <div class="code-block"><pre>try {
+    int result = 10 / 0;
+} catch (ArithmeticException e) {
+    System.out.println("Cannot divide by zero!");
+} finally {
+    System.out.println("This always executes");
+}</pre></div>
+            </div>
+
+            <div class="topic-section">
+                <h2>📚 Collections Framework</h2>
+                <p>ArrayList, HashMap, and other data structures.</p>
+                <div class="code-block"><pre>import java.util.*;
+
+ArrayList&lt;String&gt; list = new ArrayList&lt;&gt;();
+list.add("Java");
+list.add("Python");
+list.add("C++");
+
+HashMap&lt;String, Integer&gt; map = new HashMap&lt;&gt;();
+map.put("One", 1);
+map.put("Two", 2);</pre></div>
+            </div>
+
+            <div class="topic-section">
+                <h2>🧵 Multithreading</h2>
+                <p>Run multiple tasks concurrently using Thread class or Runnable interface.</p>
+                <div class="code-block"><pre>class MyThread extends Thread {
+    public void run() {
+        System.out.println("Thread running");
+    }
+}
+
+MyThread t1 = new MyThread();
+t1.start();
+
+// Using Runnable
+Runnable task = () -> {
+    System.out.println("Runnable task");
+};
+new Thread(task).start();</pre></div>
+            </div>
+
+            <div class="topic-section">
+                <h2>📄 File Handling</h2>
+                <p>Read and write files using FileReader, FileWriter, and Scanner.</p>
+                <div class="code-block"><pre>import java.io.*;
+
+// Writing to file
+FileWriter writer = new FileWriter("data.txt");
+writer.write("Hello Java!");
+writer.close();
+
+// Reading from file
+BufferedReader reader = new BufferedReader(new FileReader("data.txt"));
+String line = reader.readLine();
+System.out.println(line);</pre></div>
+            </div>
+
+            <a href="index.html" class="back-home"><i class="fas fa-arrow-left"></i> Back to Home</a>
+        </main>
+    </div>
+</div>
+
+<footer class="footer"><p>© 2025 SyntaxLab | Java - Write once, run anywhere.</p></footer>
+<script src="script.js"></script>
+</body>
+</html>

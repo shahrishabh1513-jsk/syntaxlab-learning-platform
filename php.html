@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SyntaxLab | Learn PHP</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo-area"><div class="logo-icon"><i class="fab fa-php"></i></div><span class="logo-text">SyntaxLab</span></div>
+        <div class="nav-links"><a href="index.html" class="nav-link">Home</a></div>
+    </div>
+</nav>
+
+<div class="language-container">
+    <div class="language-header">
+        <h1>Learn PHP</h1>
+        <p class="intro">PHP is a server-side scripting language used to build dynamic websites and web applications.</p>
+    </div>
+
+    <div class="content-grid">
+        <aside class="topics-sidebar">
+            <h3><i class="fas fa-list-ul"></i> Topics</h3>
+            <ul class="topic-list">
+                <li><i class="fas fa-code"></i> PHP Syntax & Basics</li>
+                <li><i class="fas fa-database"></i> Variables & Data Types</li>
+                <li><i class="fas fa-random"></i> Conditional Statements</li>
+                <li><i class="fas fa-repeat"></i> Loops in PHP</li>
+                <li><i class="fas fa-cube"></i> Functions & Arrays</li>
+                <li><i class="fas fa-globe"></i> Form Handling (GET/POST)</li>
+                <li><i class="fas fa-server"></i> Working with Databases</li>
+                <li><i class="fas fa-lock"></i> Sessions & Cookies</li>
+            </ul>
+            <div class="progress-wrapper">
+                <div class="progress-label"><span>Progress</span><span class="progress-percent">0%</span></div>
+                <div class="progress-bar"><div class="progress-fill"></div></div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="topic-section">
+                <h2>🐘 PHP Syntax & Basics</h2>
+                <p>PHP code is executed on the server. It's embedded in HTML using &lt;?php ?&gt; tags.</p>
+                <div class="code-block"><pre>&lt;?php
+// This is a PHP comment
+echo "Hello, World!";
+?&gt;</pre></div>
+            </div>
+
+            <div class="topic-section">
+                <h2>📊 Variables & Data Types</h2>
+                <p>Variables start with $ sign. Supports strings, integers, floats, booleans, arrays, and objects.</p>
+                <div class="code-block"><pre>&lt;?php
+$name = "SyntaxLab";
+$age = 5;
+$price = 29.99;
+$isActive = true;
+
+echo "Name: " . $name;
+?&gt;</pre></div>
+            </div>
+
+            <div class="topic-section">
+                <h2>⚖️ Conditional Statements</h2>
+                <p>Control program flow with if, else, elseif, and switch statements.</p>
+                <div class="code-block"><pre>&lt;?php
+$score = 85;
+
+if ($score >= 90) {
+    echo "Grade A";
+} elseif ($score >= 70) {
+    echo "Grade B";
+} else {
+    echo "Need improvement";
+}
+?&gt;</pre></div>
+            </div>
+
+            <div class="topic-section">
+                <h2>🔄 Loops in PHP</h2>
+                <p>Repeat code blocks with for, while, foreach loops.</p>
+                <div class="code-block"><pre>&lt;?php
+// for loop
+for ($i = 0; $i &lt; 5; $i++) {
+    echo $i . "&lt;br&gt;";
+}
+
+// foreach for arrays
+$colors = ["red", "green", "blue"];
+foreach ($colors as $color) {
+    echo $color . "&lt;br&gt;";
+}
+?&gt;</pre></div>
+            </div>
+
+            <div class="topic-section">
+                <h2>⚙️ Functions & Arrays</h2>
+                <p>Create reusable functions and work with indexed/associative arrays.</p>
+                <div class="code-block"><pre>&lt;?php
+function greet($name) {
+    return "Hello, $name!";
+}
+
+// Array functions
+$fruits = ["apple", "banana", "orange"];
+array_push($fruits, "grape");
+$count = count($fruits);
+
+$person = ["name" => "John", "age" => 30];
+echo $person['name'];
+?&gt;</pre></div>
+            </div>
+
+            <div class="topic-section">
+                <h2>📝 Form Handling (GET/POST)</h2>
+                <p>Retrieve data from HTML forms using $_GET or $_POST superglobals.</p>
+                <div class="code-block"><pre>&lt;form method="POST" action="process.php"&gt;
+  &lt;input type="text" name="username"&gt;
+  &lt;input type="submit"&gt;
+&lt;/form&gt;
+
+&lt;?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST['username'];
+    echo "Welcome, $username!";
+}
+?&gt;</pre></div>
+            </div>
+
+            <div class="topic-section">
+                <h2>🗄️ Working with Databases</h2>
+                <p>Connect to MySQL database using PDO or MySQLi for data operations.</p>
+                <div class="code-block"><pre>&lt;?php
+$pdo = new PDO("mysql:host=localhost;dbname=test", "user", "pass");
+
+$stmt = $pdo->prepare("SELECT * FROM users WHERE id = ?");
+$stmt->execute([$id]);
+$user = $stmt->fetch();
+
+// Insert data
+$sql = "INSERT INTO users (name) VALUES (:name)";
+$stmt = $pdo->prepare($sql);
+$stmt->execute(['name' => $name]);
+?&gt;</pre></div>
+            </div>
+
+            <div class="topic-section">
+                <h2>🔐 Sessions & Cookies</h2>
+                <p>Maintain user state across pages using sessions or store data in cookies.</p>
+                <div class="code-block"><pre>&lt;?php
+session_start();
+$_SESSION['user_id'] = 123;
+
+// Set cookie
+setcookie("theme", "dark", time() + 86400, "/");
+
+// Access session data
+if (isset($_SESSION['user_id'])) {
+    echo "User is logged in";
+}
+?&gt;</pre></div>
+            </div>
+
+            <a href="index.html" class="back-home"><i class="fas fa-arrow-left"></i> Back to Home</a>
+        </main>
+    </div>
+</div>
+
+<footer class="footer"><p>© 2025 SyntaxLab | PHP - Server-side scripting power.</p></footer>
+<script src="script.js"></script>
+</body>
+</html>

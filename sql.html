@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SyntaxLab | Learn SQL</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo-area"><div class="logo-icon"><i class="fas fa-database"></i></div><span class="logo-text">SyntaxLab</span></div>
+        <div class="nav-links"><a href="index.html" class="nav-link">Home</a></div>
+    </div>
+</nav>
+
+<div class="language-container">
+    <div class="language-header">
+        <h1>Learn SQL</h1>
+        <p class="intro">SQL (Structured Query Language) is used to communicate with databases. It's essential for data management and analysis.</p>
+    </div>
+
+    <div class="content-grid">
+        <aside class="topics-sidebar">
+            <h3><i class="fas fa-list-ul"></i> Topics</h3>
+            <ul class="topic-list">
+                <li><i class="fas fa-database"></i> Database Basics</li>
+                <li><i class="fas fa-table"></i> CREATE & INSERT</li>
+                <li><i class="fas fa-search"></i> SELECT Statement</li>
+                <li><i class="fas fa-filter"></i> WHERE Clause</li>
+                <li><i class="fas fa-sort"></i> ORDER BY & GROUP BY</li>
+                <li><i class="fas fa-link"></i> JOIN Operations</li>
+                <li><i class="fas fa-edit"></i> UPDATE & DELETE</li>
+                <li><i class="fas fa-chart-line"></i> Advanced Queries</li>
+            </ul>
+            <div class="progress-wrapper">
+                <div class="progress-label"><span>Progress</span><span class="progress-percent">0%</span></div>
+                <div class="progress-bar"><div class="progress-fill"></div></div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="topic-section">
+                <h2>🗄️ Database Basics</h2>
+                <p>Databases store organized data. Tables contain rows and columns.</p>
+                <div class="code-block"><pre>-- Create a database
+CREATE DATABASE company;
+
+-- Use the database
+USE company;
+
+-- Create a table
+CREATE TABLE employees (
+    id INT PRIMARY KEY,
+    name VARCHAR(100),
+    salary DECIMAL(10,2)
+);</pre></div>
+            </div>
+
+            <div class="topic-section">
+                <h2>📝 CREATE & INSERT</h2>
+                <p>Create tables and add data using INSERT statement.</p>
+                <div class="code-block"><pre>CREATE TABLE products (
+    product_id INT PRIMARY KEY,
+    product_name VARCHAR(255),
+    price DECIMAL(10,2)
+);
+
+INSERT INTO products (product_id, product_name, price)
+VALUES (1, 'Laptop', 999.99),
+       (2, 'Mouse', 29.99),
+       (3, 'Keyboard', 79.99);</pre></div>
+            </div>
+
+            <div class="topic-section">
+                <h2>🔍 SELECT Statement</h2>
+                <p>Retrieve data from database tables.</p>
+                <div class="code-block"><pre>-- Select all columns
+SELECT * FROM employees;
+
+-- Select specific columns
+SELECT name, salary FROM employees;
+
+-- Select with alias
+SELECT name AS employee_name, salary FROM employees;</pre></div>
+            </div>
+
+            <div class="topic-section">
+                <h2>🎯 WHERE Clause</h2>
+                <p>Filter records based on conditions.</p>
+                <div class="code-block"><pre>-- Equal condition
+SELECT * FROM employees WHERE department = 'IT';
+
+-- Comparison operators
+SELECT * FROM products WHERE price > 50;
+
+-- Multiple conditions
+SELECT * FROM employees 
+WHERE age >= 25 AND salary > 50000;
+
+-- Pattern matching
+SELECT * FROM customers WHERE name LIKE 'J%';</pre></div>
+            </div>
+
+            <div class="topic-section">
+                <h2>📊 ORDER BY & GROUP BY</h2>
+                <p>Sort results and group rows for aggregation.</p>
+                <div class="code-block"><pre>-- Sort results
+SELECT name, salary FROM employees
+ORDER BY salary DESC;
+
+-- Group by with aggregation
+SELECT department, COUNT(*) as emp_count, AVG(salary) as avg_salary
+FROM employees
+GROUP BY department;
+
+-- Having clause (filter groups)
+SELECT department, AVG(salary) as avg_salary
+FROM employees
+GROUP BY department
+HAVING AVG(salary) > 60000;</pre></div>
+            </div>
+
+            <div class="topic-section">
+                <h2>🔗 JOIN Operations</h2>
+                <p>Combine data from multiple tables.</p>
+                <div class="code-block"><pre>-- INNER JOIN
+SELECT employees.name, departments.dept_name
+FROM employees
+INNER JOIN departments ON employees.dept_id = departments.id;
+
+-- LEFT JOIN
+SELECT customers.name, orders.order_date
+FROM customers
+LEFT JOIN orders ON customers.id = orders.customer_id;
+
+-- Multiple joins
+SELECT e.name, d.dept_name, p.project_name
+FROM employees e
+JOIN departments d ON e.dept_id = d.id
+JOIN projects p ON e.id = p.emp_id;</pre></div>
+            </div>
+
+            <div class="topic-section">
+                <h2>✏️ UPDATE & DELETE</h2>
+                <p>Modify or remove existing data.</p>
+                <div class="code-block"><pre>-- Update records
+UPDATE employees
+SET salary = salary * 1.10
+WHERE department = 'Sales';
+
+-- Delete records
+DELETE FROM employees
+WHERE status = 'inactive';
+
+-- Be careful with DELETE (use WHERE clause!)
+-- DELETE FROM employees; -- Removes ALL rows!</pre></div>
+            </div>
+
+            <div class="topic-section">
+                <h2>📈 Advanced Queries</h2>
+                <p>Subqueries, views, and indexes for optimization.</p>
+                <div class="code-block"><pre>-- Subquery
+SELECT name, salary
+FROM employees
+WHERE salary > (SELECT AVG(salary) FROM employees);
+
+-- Create view
+CREATE VIEW high_earners AS
+SELECT name, salary, department
+FROM employees
+WHERE salary > 75000;
+
+-- Index for faster queries
+CREATE INDEX idx_lastname ON customers(last_name);
+
+-- Union of results
+SELECT name FROM employees
+UNION
+SELECT name FROM contractors;</pre></div>
+            </div>
+
+            <a href="index.html" class="back-home"><i class="fas fa-arrow-left"></i> Back to Home</a>
+        </main>
+    </div>
+</div>
+
+<footer class="footer"><p>© 2025 SyntaxLab | SQL - Master database queries.</p></footer>
+<script src="script.js"></script>
+</body>
+</html>

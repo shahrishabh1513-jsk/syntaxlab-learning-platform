@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SyntaxLab | Learn HTML</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo-area"><div class="logo-icon"><i class="fab fa-html5"></i></div><span class="logo-text">SyntaxLab</span></div>
+        <div class="nav-links"><a href="index.html" class="nav-link">Home</a></div>
+    </div>
+</nav>
+
+<div class="language-container">
+    <div class="language-header">
+        <h1>Learn HTML</h1>
+        <p class="intro">HTML is the standard markup language for creating Web pages. It describes the structure of a webpage.</p>
+    </div>
+
+    <div class="content-grid">
+        <aside class="topics-sidebar">
+            <h3><i class="fas fa-list-ul"></i> Topics</h3>
+            <ul class="topic-list">
+                <li><i class="fas fa-code"></i> HTML Basics</li>
+                <li><i class="fas fa-tag"></i> Elements & Tags</li>
+                <li><i class="fas fa-link"></i> Attributes & Links</li>
+                <li><i class="fas fa-image"></i> Images & Multimedia</li>
+                <li><i class="fas fa-table"></i> HTML Tables</li>
+                <li><i class="fas fa-window-maximize"></i> Forms & Input</li>
+                <li><i class="fas fa-css3"></i> Semantic HTML5</li>
+            </ul>
+            <div class="progress-wrapper">
+                <div class="progress-label"><span>Progress</span><span class="progress-percent">0%</span></div>
+                <div class="progress-bar"><div class="progress-fill"></div></div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="topic-section">
+                <h2>📘 HTML Basics</h2>
+                <p>HTML (HyperText Markup Language) uses "tags" to structure content. The first step is understanding the basic skeleton: <strong>!DOCTYPE html</strong>, html, head, and body tags.</p>
+                <div class="code-block"><pre>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;&lt;title&gt;My Page&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;&lt;h1&gt;Hello World!&lt;/h1&gt;&lt;/body&gt;
+&lt;/html&gt;</pre></div>
+            </div>
+
+            <div class="topic-section">
+                <h2>🏷️ Elements & Tags</h2>
+                <p>Tags like &lt;p&gt; for paragraphs, &lt;h1&gt; to &lt;h6&gt; for headings. Most tags have an opening and closing version.</p>
+                <div class="code-block"><pre>&lt;h1&gt;Main Title&lt;/h1&gt;
+&lt;p&gt;This is a paragraph with &lt;strong&gt;bold&lt;/strong&gt; text.&lt;/p&gt;</pre></div>
+            </div>
+
+            <div class="topic-section">
+                <h2>🔗 Attributes & Links</h2>
+                <p>Links use the &lt;a&gt; tag with href attribute. Attributes give extra info to elements.</p>
+                <div class="code-block"><pre>&lt;a href="https://www.example.com" target="_blank"&gt;Visit Example&lt;/a&gt;
+&lt;img src="photo.jpg" alt="description"&gt;</pre></div>
+            </div>
+
+            <div class="topic-section">
+                <h2>🖼️ Images & Multimedia</h2>
+                <p>Embed images using &lt;img&gt; , videos using &lt;video&gt; tag. Always add alt text for accessibility.</p>
+                <div class="code-block"><pre>&lt;img src="logo.png" alt="SyntaxLab Logo" width="200"&gt;
+&lt;video controls&gt;&lt;source src="intro.mp4" type="video/mp4"&gt;&lt;/video&gt;</pre></div>
+            </div>
+
+            <div class="topic-section">
+                <h2>📊 HTML Tables</h2>
+                <p>Tables allow data in rows and columns using &lt;table&gt;, &lt;tr&gt;, &lt;td&gt;.</p>
+                <div class="code-block"><pre>&lt;table border="1"&gt;
+  &lt;tr&gt;&lt;th&gt;Language&lt;/th&gt;&lt;th&gt;Difficulty&lt;/th&gt;&lt;/tr&gt;
+  &lt;tr&gt;&lt;td&gt;HTML&lt;/td&gt;&lt;td&gt;Easy&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;</pre></div>
+            </div>
+
+            <div class="topic-section">
+                <h2>📝 Forms & Input</h2>
+                <p>Collect user data with forms: text fields, buttons, checkboxes.</p>
+                <div class="code-block"><pre>&lt;form action="/submit"&gt;
+  Name: &lt;input type="text" name="name"&gt;
+  &lt;input type="submit" value="Send"&gt;
+&lt;/form&gt;</pre></div>
+            </div>
+
+            <div class="topic-section">
+                <h2>✨ Semantic HTML5</h2>
+                <p>Use &lt;header&gt;, &lt;nav&gt;, &lt;article&gt;, &lt;footer&gt; for better SEO and accessibility.</p>
+                <div class="code-block"><pre>&lt;article&gt;
+  &lt;header&gt;&lt;h2&gt;Blog Post&lt;/h2&gt;&lt;/header&gt;
+  &lt;p&gt;Content here...&lt;/p&gt;
+  &lt;footer&gt;Author: SyntaxLab&lt;/footer&gt;
+&lt;/article&gt;</pre></div>
+            </div>
+
+            <a href="index.html" class="back-home"><i class="fas fa-arrow-left"></i> Back to Home</a>
+        </main>
+    </div>
+</div>
+
+<footer class="footer"><p>© 2025 SyntaxLab | HTML Mastery - All rights reserved.</p></footer>
+<script src="script.js"></script>
+</body>
+</html>

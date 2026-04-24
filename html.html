@@ -3,101 +3,1139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SyntaxLab | Learn HTML</title>
+    <title>SyntaxLab | Learn HTML - Complete Tutorial with Details</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Enhanced Learning Styles */
+        .info-box {
+            background: rgba(99, 102, 241, 0.08);
+            border-left: 4px solid #6366f1;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 12px;
+        }
+        .info-box i {
+            color: #6366f1;
+            margin-right: 10px;
+        }
+        .tip-box {
+            background: rgba(16, 185, 129, 0.08);
+            border-left: 4px solid #10b981;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 12px;
+        }
+        .warning-box {
+            background: rgba(245, 158, 11, 0.08);
+            border-left: 4px solid #f59e0b;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 12px;
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        .comparison-table th {
+            background: #6366f1;
+            color: white;
+            padding: 10px;
+        }
+        .comparison-table td {
+            border: 1px solid rgba(99,102,241,0.2);
+            padding: 10px;
+        }
+        .practice-card {
+            background: linear-gradient(135deg, rgba(99,102,241,0.05), rgba(236,72,153,0.05));
+            border-radius: 16px;
+            padding: 1.2rem;
+            margin: 1.2rem 0;
+            border: 1px solid rgba(99,102,241,0.2);
+        }
+        .practice-card h4 {
+            color: #6366f1;
+            margin-bottom: 0.5rem;
+        }
+        .code-inline {
+            background: #1e1e2e;
+            color: #e2e2e2;
+            padding: 0.2rem 0.4rem;
+            border-radius: 6px;
+            font-family: monospace;
+            font-size: 0.85rem;
+        }
+        .key-point {
+            display: inline-block;
+            background: #6366f1;
+            color: white;
+            font-size: 0.7rem;
+            padding: 2px 8px;
+            border-radius: 20px;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+        .section-badge {
+            display: inline-block;
+            background: #ec4899;
+            color: white;
+            font-size: 0.7rem;
+            padding: 2px 10px;
+            border-radius: 20px;
+            margin-left: 10px;
+        }
+        details {
+            margin: 1rem 0;
+            padding: 0.5rem;
+            border-radius: 12px;
+            background: rgba(0,0,0,0.02);
+        }
+        summary {
+            font-weight: 600;
+            cursor: pointer;
+            color: #6366f1;
+            padding: 0.5rem;
+        }
+        .grid-2col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        @media (max-width: 600px) {
+            .grid-2col {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
 
 <nav class="navbar">
     <div class="nav-container">
-        <div class="logo-area"><div class="logo-icon"><i class="fab fa-html5"></i></div><span class="logo-text">SyntaxLab</span></div>
-        <div class="nav-links"><a href="index.html" class="nav-link">Home</a></div>
+        <div class="logo-area" onclick="location.href='index.html'">
+            <div class="logo-icon"><i class="fab fa-html5"></i></div>
+            <span class="logo-text">SyntaxLab</span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html" class="nav-link">Home</a>
+        </div>
     </div>
 </nav>
 
 <div class="language-container">
     <div class="language-header">
-        <h1>Learn HTML</h1>
-        <p class="intro">HTML is the standard markup language for creating Web pages. It describes the structure of a webpage.</p>
+        <h1>Learn HTML <span class="badge">Complete Tutorial </span></h1>
+        <p class="intro">HTML is the standard markup language for creating Web pages. This comprehensive tutorial includes detailed explanations, practical examples, and learning tips for every concept.</p>
     </div>
 
     <div class="content-grid">
         <aside class="topics-sidebar">
-            <h3><i class="fas fa-list-ul"></i> Topics</h3>
+            <h3><i class="fas fa-list-ul"></i> Topics </h3>
             <ul class="topic-list">
-                <li><i class="fas fa-code"></i> HTML Basics</li>
-                <li><i class="fas fa-tag"></i> Elements & Tags</li>
-                <li><i class="fas fa-link"></i> Attributes & Links</li>
-                <li><i class="fas fa-image"></i> Images & Multimedia</li>
-                <li><i class="fas fa-table"></i> HTML Tables</li>
-                <li><i class="fas fa-window-maximize"></i> Forms & Input</li>
-                <li><i class="fas fa-css3"></i> Semantic HTML5</li>
+                <li><i class="fas fa-home"></i> 1. HTML HOME - Getting Started</li>
+                <li><i class="fas fa-info-circle"></i> 2. Introduction - Core Concepts</li>
+                <li><i class="fas fa-code"></i> 3. Basic Examples - First Code</li>
+                <li><i class="fas fa-tag"></i> 4. Elements - Building Blocks</li>
+                <li><i class="fas fa-cog"></i> 5. Attributes - Extra Info</li>
+                <li><i class="fas fa-heading"></i> 6. Headings - Structure Titles</li>
+                <li><i class="fas fa-paragraph"></i> 7. Paragraphs - Text Blocks</li>
+                <li><i class="fas fa-palette"></i> 8. Styles - Visual Design</li>
+                <li><i class="fas fa-bold"></i> 9. Text Formatting - Emphasis</li>
+                <li><i class="fas fa-comment"></i> 10. Comments - Documentation</li>
+                <li><i class="fas fa-fill-drip"></i> 11. Colors (RGB, HEX, HSL)</li>
+                <li><i class="fas fa-link"></i> 12. Links - Navigation</li>
+                <li><i class="fas fa-image"></i> 13. Images - Visual Content</li>
+                <li><i class="fas fa-window-maximize"></i> 14. Page Title - Browser Tab</li>
+                <li><i class="fas fa-table"></i> 15. Tables - Data Organization</li>
+                <li><i class="fas fa-list"></i> 16. Lists - Item Collections</li>
+                <li><i class="fas fa-layer-group"></i> 17. Div Element - Containers</li>
+                <li><i class="fas fa-chalkboard-teacher"></i> 18. Class Attribute - CSS Styling</li>
+                <li><i class="fas fa-id-card"></i> 19. id Attribute - Unique IDs</li>
+                <li><i class="fas fa-smile"></i> 20. Tags List - Complete Reference</li>
+                <li><i class="fas fa-video"></i> 21. Audio/Video - Multimedia</li>
+                <li><i class="fas fa-globe"></i> 22. Character Sets - Encoding</li>
+                <li><i class="fas fa-flag"></i> 23. Country Codes - Localization</li>
+                <li><i class="fas fa-keyboard"></i> 24. Keyboard Shortcuts - Productivity</li>
             </ul>
             <div class="progress-wrapper">
-                <div class="progress-label"><span>Progress</span><span class="progress-percent">0%</span></div>
-                <div class="progress-bar"><div class="progress-fill"></div></div>
+                <div class="progress-label">
+                    <span><i class="fas fa-chart-line"></i> Learning Progress</span>
+                    <span class="progress-percent">0%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                <div class="reset-progress">
+                    <button class="reset-btn" id="hardResetBtn"><i class="fas fa-sync-alt"></i> Reset Progress</button>
+                </div>
             </div>
         </aside>
 
         <main class="main-content">
-            <div class="topic-section">
-                <h2>📘 HTML Basics</h2>
-                <p>HTML (HyperText Markup Language) uses "tags" to structure content. The first step is understanding the basic skeleton: <strong>!DOCTYPE html</strong>, html, head, and body tags.</p>
+            <!-- SECTION 1: HTML HOME -->
+            <div class="topic-section" id="section1">
+                <h2>📄 1. HTML HOME <span class="section-badge">Getting Started</span></h2>
+                <p><strong>HTML (HyperText Markup Language)</strong> is the standard language for creating websites. It describes the structure of web pages using elements represented by tags.</p>
+                
+                <div class="info-box">
+                    <i class="fas fa-lightbulb"></i> <strong>What makes HTML special?</strong> HTML is not a programming language—it's a markup language that tells browsers how to organize and display content. Every website you visit uses HTML!
+                </div>
+
+                <div class="code-block"><pre>&lt;!DOCTYPE html&gt;     ← Declares this is HTML5 document
+&lt;html&gt;              ← Root element (everything inside)
+  &lt;head&gt;            ← Contains meta information
+    &lt;title&gt;My First Page&lt;/title&gt;  ← Shows in browser tab
+  &lt;/head&gt;
+  &lt;body&gt;            ← Visible content goes here
+    &lt;h1&gt;Welcome!&lt;/h1&gt;      ← Main heading
+    &lt;p&gt;Learning HTML is fun!&lt;/p&gt;  ← Paragraph
+  &lt;/body&gt;
+&lt;/html&gt;</pre></div>
+
+                <div class="practice-card">
+                    <h4><i class="fas fa-pencil-alt"></i> Try It Yourself:</h4>
+                    <p>Create a new file called <code>first.html</code>, copy the code above, and open it in your browser. Change the text and see what happens!</p>
+                </div>
+
+                <details>
+                    <summary><i class="fas fa-question-circle"></i> Why do we need DOCTYPE?</summary>
+                    <p>The <code>&lt;!DOCTYPE html&gt;</code> declaration helps browsers render the page correctly. Without it, browsers might use "quirks mode" which can cause layout problems. Always include it at the top!</p>
+                </details>
+            </div>
+
+            <!-- SECTION 2: Introduction -->
+            <div class="topic-section" id="section2">
+                <h2>🌐 2. HTML Introduction <span class="section-badge">Core Concepts</span></h2>
+                
+                <div class="grid-2col">
+                    <div class="info-box">
+                        <i class="fas fa-check-circle"></i> <strong>What is HTML?</strong>
+                        <ul style="margin-top: 8px;">
+                            <li>Hyper Text Markup Language</li>
+                            <li>Standard markup for web pages</li>
+                            <li>Uses "tags" to structure content</li>
+                            <li>Works with CSS and JavaScript</li>
+                        </ul>
+                    </div>
+                    <div class="info-box">
+                        <i class="fas fa-cogs"></i> <strong>How Browsers Work</strong>
+                        <ul style="margin-top: 8px;">
+                            <li>Read HTML file</li>
+                            <li>Parse tags</li>
+                            <li>Render content visually</li>
+                            <li>Execute JavaScript</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>HTML Document Structure Explained</h3>
+                <div class="code-block"><pre>&lt;!DOCTYPE html&gt;     ← Tells browser: "This is HTML5"
+&lt;html&gt;              ← Everything goes inside this
+  &lt;head&gt;            ← "Behind the scenes" info
+    &lt;!-- Meta tags, title, CSS links go here --&gt;
+  &lt;/head&gt;
+  &lt;body&gt;            ← "Show this to user"
+    &lt;!-- Visible page content --&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre></div>
+
+                <div class="tip-box">
+                    <i class="fas fa-graduation-cap"></i> <strong>Learning Tip:</strong> Think of HTML like building a house: <code>&lt;html&gt;</code> is the foundation, <code>&lt;head&gt;</code> is the blueprint, and <code>&lt;body&gt;</code> is where all the rooms (content) go!
+                </div>
+
+                <h3>HTML Version History</h3>
+                <table class="comparison-table">
+                    <tr><th>Year</th><th>Version</th><th>Key Features</th></tr>
+                    <tr><td>1991</td><td>HTML 1.0</td><td>Basic text formatting, links</td></tr>
+                    <tr><td>1997</td><td>HTML 4.0</td><td>CSS support, forms, tables</td></tr>
+                    <tr><td>2014</td><td>HTML5</td><td>Audio, video, canvas, semantic elements</td></tr>
+                </table>
+            </div>
+
+            <!-- SECTION 3: Basic Examples -->
+            <div class="topic-section" id="section3">
+                <h2>🔰 3. HTML Basic Examples <span class="section-badge">First Code</span></h2>
+                
+                <h3>Your First HTML Page</h3>
                 <div class="code-block"><pre>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
-&lt;head&gt;&lt;title&gt;My Page&lt;/title&gt;&lt;/head&gt;
-&lt;body&gt;&lt;h1&gt;Hello World!&lt;/h1&gt;&lt;/body&gt;
+&lt;body&gt;
+
+&lt;h1&gt;My First Heading&lt;/h1&gt;
+&lt;p&gt;My first paragraph.&lt;/p&gt;
+
+&lt;/body&gt;
 &lt;/html&gt;</pre></div>
+
+                <div class="grid-2col">
+                    <div class="info-box">
+                        <i class="fas fa-eye"></i> <strong>How to View Source Code:</strong>
+                        <p>Right-click anywhere on a webpage → "View Page Source" OR press <kbd>Ctrl+U</kbd> (Windows/Linux) or <kbd>Cmd+U</kbd> (Mac).</p>
+                    </div>
+                    <div class="info-box">
+                        <i class="fas fa-search"></i> <strong>Inspect Elements:</strong>
+                        <p>Right-click → "Inspect" opens Developer Tools. You can see the live HTML/CSS and even edit it temporarily!</p>
+                    </div>
+                </div>
+
+                <div class="practice-card">
+                    <h4><i class="fas fa-challenge"></i> Mini Challenge:</h4>
+                    <p>Create an HTML page with: a heading that says "My Website", a paragraph about your favorite hobby, and an image. Use the <code>&lt;img&gt;</code> tag with a real image URL!</p>
+                </div>
             </div>
 
-            <div class="topic-section">
-                <h2>🏷️ Elements & Tags</h2>
-                <p>Tags like &lt;p&gt; for paragraphs, &lt;h1&gt; to &lt;h6&gt; for headings. Most tags have an opening and closing version.</p>
-                <div class="code-block"><pre>&lt;h1&gt;Main Title&lt;/h1&gt;
-&lt;p&gt;This is a paragraph with &lt;strong&gt;bold&lt;/strong&gt; text.&lt;/p&gt;</pre></div>
+            <!-- SECTION 4: Elements -->
+            <div class="topic-section" id="section4">
+                <h2>🏷️ 4. HTML Elements <span class="section-badge">Building Blocks</span></h2>
+                
+                <p><strong>What is an HTML Element?</strong></p>
+                <div class="info-box">
+                    An element consists of: <strong>Start Tag</strong> + <strong>Content</strong> + <strong>End Tag</strong>
+                    <br><br>
+                    Example: <code class="code-inline">&lt;p&gt;This is a paragraph.&lt;/p&gt;</code>
+                </div>
+
+                <h3>Types of Elements</h3>
+                <table class="comparison-table">
+                    <tr><th>Type</th><th>Example</th><th>Description</th></tr>
+                    <tr><td>Block-level</td><td>&lt;div&gt;, &lt;p&gt;, &lt;h1&gt;</td><td>Takes full width, starts new line</td></tr>
+                    <tr><td>Inline</td><td>&lt;span&gt;, &lt;a&gt;, &lt;strong&gt;</td><td>Takes only needed width, no line break</td></tr>
+                    <tr><td>Empty/Void</td><td>&lt;br&gt;, &lt;img&gt;, &lt;hr&gt;</td><td>No content, no end tag needed</td></tr>
+                </table>
+
+                <div class="code-block"><pre>&lt;!-- Block-level example --&gt;
+&lt;div&gt;This takes the whole line&lt;/div&gt;
+&lt;p&gt;Another block element&lt;/p&gt;
+
+&lt;!-- Inline example --&gt;
+&lt;span&gt;This stays &lt;/span&gt;&lt;span&gt;on the same line&lt;/span&gt;
+
+&lt;!-- Empty elements --&gt;
+Line 1&lt;br&gt;        ← Line break, no end tag
+Line 2&lt;hr&gt;        ← Horizontal rule (separator)</pre></div>
+
+                <details>
+                    <summary><i class="fas fa-code-branch"></i> Nested Elements (Elements inside elements)</summary>
+                    <p>HTML elements can be nested inside each other:</p>
+                    <div class="code-block"><pre>&lt;div&gt;
+  &lt;h2&gt;Outer Title&lt;/h2&gt;
+  &lt;p&gt;This paragraph is inside the div&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;List inside div&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</pre></div>
+                    <p><strong>Important:</strong> Always close tags in reverse order of opening!</p>
+                </details>
             </div>
 
-            <div class="topic-section">
-                <h2>🔗 Attributes & Links</h2>
-                <p>Links use the &lt;a&gt; tag with href attribute. Attributes give extra info to elements.</p>
-                <div class="code-block"><pre>&lt;a href="https://www.example.com" target="_blank"&gt;Visit Example&lt;/a&gt;
-&lt;img src="photo.jpg" alt="description"&gt;</pre></div>
+            <!-- SECTION 5: Attributes -->
+            <div class="topic-section" id="section5">
+                <h2>⚙️ 5. HTML Attributes <span class="section-badge">Extra Information</span></h2>
+                
+                <p><strong>Attributes provide additional information about elements</strong> - they make elements more powerful!</p>
+
+                <h3>Common Attributes & Uses</h3>
+                <table class="comparison-table">
+                    <tr><th>Attribute</th><th>Used On</th><th>Purpose</th><th>Example</th></tr>
+                    <tr><td>href</td><td>&lt;a&gt;</td><td>Link destination</td><td>&lt;a href="https://google.com"&gt;Google&lt;/a&gt;</td></tr>
+                    <tr><td>src</td><td>&lt;img&gt;, &lt;script&gt;</td><td>Source file location</td><td>&lt;img src="photo.jpg"&gt;</td></tr>
+                    <tr><td>alt</td><td>&lt;img&gt;</td><td>Alternative text</td><td>&lt;img src="cat.jpg" alt="Cute cat"&gt;</td></tr>
+                    <tr><td>class</td><td>All elements</td><td>CSS class reference</td><td>&lt;div class="container"&gt;</td></tr>
+                    <tr><td>id</td><td>All elements</td><td>Unique identifier</td><td>&lt;p id="intro"&gt;</td></tr>
+                    <tr><td>style</td><td>All elements</td><td>Inline CSS styling</td><td>&lt;p style="color:red"&gt;</td></tr>
+                </table>
+
+                <div class="code-block"><pre>&lt;!-- Multiple attributes in one tag --&gt;
+&lt;a href="https://example.com" target="_blank" title="Click to visit"&gt;
+  Visit Example
+&lt;/a&gt;
+
+&lt;img src="logo.png" alt="Company Logo" width="200" height="100" loading="lazy"&gt;</pre></div>
+
+                <div class="tip-box">
+                    <i class="fas fa-lightbulb"></i> <strong>Pro Tip:</strong> Always use quotes around attribute values (either single '' or double ""). This prevents errors with spaces in values!
+                </div>
             </div>
 
-            <div class="topic-section">
-                <h2>🖼️ Images & Multimedia</h2>
-                <p>Embed images using &lt;img&gt; , videos using &lt;video&gt; tag. Always add alt text for accessibility.</p>
-                <div class="code-block"><pre>&lt;img src="logo.png" alt="SyntaxLab Logo" width="200"&gt;
-&lt;video controls&gt;&lt;source src="intro.mp4" type="video/mp4"&gt;&lt;/video&gt;</pre></div>
+            <!-- SECTION 6: Headings -->
+            <div class="topic-section" id="section6">
+                <h2>📌 6. HTML Headings <span class="section-badge">Document Structure</span></h2>
+                
+                <p><strong>Headings define the hierarchy of your content</strong> - like chapter titles in a book!</p>
+
+                <div class="grid-2col">
+                    <div class="code-block"><pre>&lt;h1&gt;Main Title (Most Important)&lt;/h1&gt;
+&lt;h2&gt;Section Title&lt;/h2&gt;
+&lt;h3&gt;Subsection&lt;/h3&gt;
+&lt;h4&gt;Sub-subsection&lt;/h4&gt;
+&lt;h5&gt;Minor heading&lt;/h5&gt;
+&lt;h6&gt;Least important&lt;/h6&gt;</pre></div>
+                    <div class="info-box">
+                        <i class="fas fa-chart-line"></i> <strong>SEO Importance:</strong>
+                        <ul>
+                            <li>Search engines use headings to understand page structure</li>
+                            <li>Use <strong>only one &lt;h1&gt;</strong> per page (main topic)</li>
+                            <li>Don't skip levels (h1 → h3 is bad)</li>
+                            <li>Headings should form an outline</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="practice-card">
+                    <h4><i class="fas fa-pencil-alt"></i> Exercise:</h4>
+                    <p>Create an outline for a "Coffee Shop" website using headings:
+                    <br>&lt;h1&gt;The Coffee House&lt;/h1&gt;
+                    <br>→ &lt;h2&gt;Our Coffees&lt;/h2&gt; → &lt;h3&gt;Espresso&lt;/h3&gt;, &lt;h3&gt;Latte&lt;/h3&gt;
+                    <br>→ &lt;h2&gt;Pastries&lt;/h2&gt; → &lt;h3&gt;Croissant&lt;/h3&gt;</p>
+                </div>
             </div>
 
-            <div class="topic-section">
-                <h2>📊 HTML Tables</h2>
-                <p>Tables allow data in rows and columns using &lt;table&gt;, &lt;tr&gt;, &lt;td&gt;.</p>
-                <div class="code-block"><pre>&lt;table border="1"&gt;
-  &lt;tr&gt;&lt;th&gt;Language&lt;/th&gt;&lt;th&gt;Difficulty&lt;/th&gt;&lt;/tr&gt;
-  &lt;tr&gt;&lt;td&gt;HTML&lt;/td&gt;&lt;td&gt;Easy&lt;/td&gt;&lt;/tr&gt;
+            <!-- SECTION 7: Paragraphs -->
+            <div class="topic-section" id="section7">
+                <h2>📝 7. HTML Paragraphs <span class="section-badge">Text Content</span></h2>
+                
+                <p>The <code class="code-inline">&lt;p&gt;</code> tag defines a paragraph - browsers automatically add margin space before and after.</p>
+
+                <div class="code-block"><pre>&lt;p&gt;This is a paragraph. It has some text and browsers will add space automatically between paragraphs.&lt;/p&gt;
+
+&lt;p&gt;This is another paragraph. Notice the gap? That's CSS margin in action!&lt;/p&gt;
+
+&lt;!-- Line breaks within a paragraph --&gt;
+&lt;p&gt;This line has a&lt;br&gt;line break here&lt;/p&gt;
+
+&lt;!-- Preformatted text (preserves spaces and line breaks) --&gt;
+&lt;pre&gt;
+  This text
+     keeps its
+  original formatting!
+&lt;/pre&gt;</pre></div>
+
+                <div class="warning-box">
+                    <i class="fas fa-exclamation-triangle"></i> <strong>Common Mistake:</strong> Don't use multiple &lt;br&gt; tags to create spacing. Use CSS margin or multiple &lt;p&gt; tags instead!
+                </div>
+
+                <details>
+                    <summary><i class="fas fa-code"></i> Paragraph vs Div vs Span</summary>
+                    <table class="comparison-table">
+                        <tr><th>Tag</th><th>Type</th><th>Use Case</th></tr>
+                        <tr><td>&lt;p&gt;</td><td>Block</td><td>Text paragraphs, articles</td></tr>
+                        <tr><td>&lt;div&gt;</td><td>Block</td><td>Grouping elements, layouts</td></tr>
+                        <tr><td>&lt;span&gt;</td><td>Inline</td><td>Styling part of text</td></tr>
+                    </table>
+                </details>
+            </div>
+
+            <!-- SECTION 8: Styles -->
+            <div class="topic-section" id="section8">
+                <h2>🎨 8. HTML Styles <span class="section-badge">Visual Design</span></h2>
+                
+                <p>The <code class="code-inline">style</code> attribute lets you add CSS directly to any element.</p>
+
+                <div class="code-block"><pre>&lt;!-- Text styles --&gt;
+&lt;p style="color: blue;"&gt;Blue text&lt;/p&gt;
+&lt;p style="font-size: 20px;"&gt;Larger text&lt;/p&gt;
+&lt;p style="font-family: Arial, sans-serif;"&gt;Different font&lt;/p&gt;
+
+&lt;!-- Background and spacing --&gt;
+&lt;div style="background-color: #f0f0f0; padding: 20px; border-radius: 10px;"&gt;
+  This div has a gray background and padding!
+&lt;/div&gt;
+
+&lt;!-- Multiple styles together --&gt;
+&lt;p style="color: white; background-color: #6366f1; padding: 10px; text-align: center;"&gt;
+  Styled paragraph
+&lt;/p&gt;</pre></div>
+
+                <div class="grid-2col">
+                    <div class="info-box">
+                        <i class="fas fa-palette"></i> <strong>Common Style Properties:</strong>
+                        <ul>
+                            <li><code>color</code> - text color</li>
+                            <li><code>background-color</code> - background</li>
+                            <li><code>font-size</code> - text size</li>
+                            <li><code>text-align</code> - left/center/right</li>
+                            <li><code>margin/padding</code> - spacing</li>
+                            <li><code>border</code> - outlines</li>
+                        </ul>
+                    </div>
+                    <div class="tip-box">
+                        <i class="fas fa-lightbulb"></i> <strong>Pro Tip:</strong> While inline styles work, it's better to use internal or external CSS for larger projects. Create a separate <code>styles.css</code> file for reusability!
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 9: Text Formatting -->
+            <div class="topic-section" id="section9">
+                <h2>✍️ 9. HTML Text Formatting <span class="section-badge">Emphasis & Style</span></h2>
+                
+                <div class="grid-2col">
+                    <div class="code-block"><pre>&lt;b&gt;Bold text&lt;/b&gt; (visual only)
+&lt;strong&gt;Important!&lt;/strong&gt; (semantic + bold)
+
+&lt;i&gt;Italic text&lt;/i&gt; (visual)
+&lt;em&gt;Emphasized&lt;/em&gt; (semantic)
+
+&lt;mark&gt;Highlighted&lt;/mark&gt;
+&lt;small&gt;Smaller text&lt;/small&gt;
+&lt;del&gt;Deleted text&lt;/del&gt;
+&lt;ins&gt;Inserted text&lt;/ins&gt;
+
+H&lt;sub&gt;2&lt;/sub&gt;O (subscript)
+E=mc&lt;sup&gt;2&lt;/sup&gt; (superscript)</pre></div>
+                    <div class="info-box">
+                        <i class="fas fa-universal-access"></i> <strong>Semantic vs Visual:</strong>
+                        <ul>
+                            <li><strong>&lt;strong&gt;</strong> - Screen readers emphasize this content</li>
+                            <li><strong>&lt;b&gt;</strong> - Just makes text bold (no extra meaning)</li>
+                            <li><strong>&lt;em&gt;</strong> - Adds verbal stress for screen readers</li>
+                            <li><strong>&lt;i&gt;</strong> - Just italic styling</li>
+                        </ul>
+                        <p>Use semantic tags for better accessibility and SEO!</p>
+                    </div>
+                </div>
+
+                <div class="practice-card">
+                    <h4><i class="fas fa-challenge"></i> Challenge:</h4>
+                    <p>Write a sentence that includes: bold text, italic text, a subscript, and highlighted text. Example: "Water is <mark>H<sub>2</sub>O</mark> and it's <strong>essential</strong> for <em>life</em>"</p>
+                </div>
+            </div>
+
+            <!-- SECTION 10: Comments -->
+            <div class="topic-section" id="section10">
+                <h2>💬 10. HTML Comments <span class="section-badge">Documentation</span></h2>
+                
+                <p class="info-box"><i class="fas fa-info-circle"></i> Comments are ignored by browsers - they help you document your code and temporarily disable sections.</p>
+
+                <div class="code-block"><pre>&lt;!-- This is an HTML comment. It won't show on the webpage! --&gt;
+
+&lt;!-- 
+  Multi-line comments
+  are great for explaining 
+  complex sections
+--&gt;
+
+&lt;div&gt;
+  &lt;!-- TODO: Add navigation menu here --&gt;
+  &lt;p&gt;Visible content&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!--[if IE]&gt;
+  &lt;p&gt;This only shows in Internet Explorer&lt;/p&gt;
+&lt;![endif]--&gt;</pre></div>
+
+                <div class="tip-box">
+                    <i class="fas fa-graduation-cap"></i> <strong>Best Practices:</strong>
+                    <ul>
+                        <li>Comment what the code DOES, not what it IS</li>
+                        <li>Use comments to mark sections: <code>&lt;!-- HEADER SECTION --&gt;</code></li>
+                        <li>Temporarily "comment out" code for debugging</li>
+                        <li>Don't over-comment - let code self-document when possible</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- SECTION 11: Colors -->
+            <div class="topic-section" id="section11">
+                <h2>🎨 11. HTML Colors <span class="section-badge">RGB, HEX, HSL</span></h2>
+                
+                <p><strong>4 ways to specify colors in HTML/CSS:</strong></p>
+
+                <div class="grid-2col">
+                    <div class="info-box">
+                        <i class="fas fa-palette"></i> <strong>1. Color Names</strong>
+                        <p>147 predefined names: red, blue, tomato, coral, etc.</p>
+                        <code class="code-inline">color: tomato;</code>
+                    </div>
+                    <div class="info-box">
+                        <i class="fas fa-chart-line"></i> <strong>2. RGB/RGBA</strong>
+                        <p>rgb(red, green, blue) - each 0-255<br>
+                        rgba(red, green, blue, alpha) - alpha = transparency (0-1)</p>
+                        <code class="code-inline">color: rgb(255, 99, 71);</code>
+                    </div>
+                    <div class="info-box">
+                        <i class="fas fa-hashtag"></i> <strong>3. HEX Codes</strong>
+                        <p>#RRGGBB - hexadecimal values (00-FF)</p>
+                        <code class="code-inline">color: #FF6347;</code>
+                    </div>
+                    <div class="info-box">
+                        <i class="fas fa-chart-pie"></i> <strong>4. HSL/HSLA</strong>
+                        <p>hsl(hue 0-360, saturation 0-100%, lightness 0-100%)</p>
+                        <code class="code-inline">color: hsl(9, 100%, 64%);</code>
+                    </div>
+                </div>
+
+                <div class="code-block"><pre>&lt;style&gt;
+  .color-example {
+    /* All these produce the same TOMATO color */
+    color: tomato;
+    color: rgb(255, 99, 71);
+    color: #ff6347;
+    color: hsl(9, 100%, 64%);
+    
+    /* With transparency */
+    background: rgba(255, 99, 71, 0.5);  /* 50% opacity */
+  }
+&lt;/style&gt;</pre></div>
+
+                <div class="practice-card">
+                    <h4><i class="fas fa-challenge"></i> Color Quiz:</h4>
+                    <p>What color is <code>rgb(0, 0, 255)</code>? What about <code>#00FF00</code>? Try converting a color name to HEX using an online color picker!</p>
+                </div>
+            </div>
+
+            <!-- SECTION 12: Links -->
+            <div class="topic-section" id="section12">
+                <h2>🔗 12. HTML Links <span class="section-badge">Navigation</span></h2>
+                
+                <p>The <code class="code-inline">&lt;a&gt;</code> (anchor) tag creates hyperlinks - the web's navigation system!</p>
+
+                <div class="code-block"><pre>&lt;!-- Basic link --&gt;
+&lt;a href="https://www.google.com"&gt;Visit Google&lt;/a&gt;
+
+&lt;!-- Open in new tab (use target="_blank") --&gt;
+&lt;a href="https://example.com" target="_blank"&gt;Opens in new tab&lt;/a&gt;
+
+&lt;!-- Link to another page on your site --&gt;
+&lt;a href="about.html"&gt;About Us&lt;/a&gt;
+&lt;a href="/contact"&gt;Contact&lt;/a&gt;
+
+&lt;!-- Link to specific section on page (using id) --&gt;
+&lt;a href="#section5"&gt;Jump to Section 5&lt;/a&gt;
+
+&lt;!-- Email link --&gt;
+&lt;a href="mailto:someone@example.com"&gt;Send Email&lt;/a&gt;
+
+&lt;!-- Link with styling --&gt;
+&lt;a href="#" style="color: #6366f1; text-decoration: none; font-weight: bold;"&gt;
+  Styled Link
+&lt;/a&gt;</pre></div>
+
+                <div class="grid-2col">
+                    <div class="info-box">
+                        <i class="fas fa-shield-alt"></i> <strong>Security Tip:</strong>
+                        <p>When using <code>target="_blank"</code>, add <code>rel="noopener noreferrer"</code> to prevent security vulnerabilities.</p>
+                        <code class="code-inline">&lt;a href="url" target="_blank" rel="noopener"&gt;</code>
+                    </div>
+                    <div class="tip-box">
+                        <i class="fas fa-link"></i> <strong>Link States (CSS):</strong>
+                        <ul>
+                            <li><code>:link</code> - unvisited</li>
+                            <li><code>:visited</code> - visited</li>
+                            <li><code>:hover</code> - mouse over</li>
+                            <li><code>:active</code> - being clicked</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 13: Images -->
+            <div class="topic-section" id="section13">
+                <h2>🖼️ 13. HTML Images <span class="section-badge">Visual Content</span></h2>
+                
+                <p>The <code class="code-inline">&lt;img&gt;</code> tag embeds images. It's an empty tag (no closing tag).</p>
+
+                <div class="code-block"><pre>&lt;!-- Basic image with required attributes --&gt;
+&lt;img src="photo.jpg" alt="Description of image"&gt;
+
+&lt;!-- With dimensions (better performance) --&gt;
+&lt;img src="logo.png" alt="Company Logo" width="200" height="100"&gt;
+
+&lt;!-- Responsive image (scales with container) --&gt;
+&lt;img src="banner.jpg" alt="Banner" style="max-width: 100%; height: auto;"&gt;
+
+&lt;!-- Image as a link --&gt;
+&lt;a href="https://example.com"&gt;
+  &lt;img src="click-me.jpg" alt="Clickable image"&gt;
+&lt;/a&gt;
+
+&lt;!-- Lazy loading (loads when visible) --&gt;
+&lt;img src="large-image.jpg" alt="Large image" loading="lazy"&gt;</pre></div>
+
+                <div class="warning-box">
+                    <i class="fas fa-exclamation-triangle"></i> <strong>Always include alt text!</strong> It's required for accessibility (screen readers) and shows when images fail to load.
+                </div>
+
+                <div class="info-box">
+                    <i class="fas fa-image"></i> <strong>Supported Image Formats:</strong>
+                    <ul>
+                        <li><strong>JPEG/JPG</strong> - Photos, realistic images (supports millions of colors)</li>
+                        <li><strong>PNG</strong> - Logos, icons, transparent backgrounds</li>
+                        <li><strong>GIF</strong> - Simple animations, limited colors (256)</li>
+                        <li><strong>SVG</strong> - Vector graphics, scales infinitely without quality loss</li>
+                        <li><strong>WEBP</strong> - Modern format, smaller file size</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- SECTION 14: Page Title -->
+            <div class="topic-section" id="section14">
+                <h2>📑 14. HTML Page Title <span class="section-badge">Browser Tab Text</span></h2>
+                
+                <p>The <code class="code-inline">&lt;title&gt;</code> element in the <code class="code-inline">&lt;head&gt;</code> sets what appears in browser tabs, bookmarks, and search results.</p>
+
+                <div class="code-block"><pre>&lt;head&gt;
+  &lt;title&gt;My Amazing Website - Learn HTML with SyntaxLab&lt;/title&gt;
+&lt;/head&gt;</pre></div>
+
+                <div class="grid-2col">
+                    <div class="info-box">
+                        <i class="fas fa-chart-line"></i> <strong>SEO Importance:</strong>
+                        <ul>
+                            <li>Title appears as the clickable headline in search results</li>
+                            <li>Keep titles under 60 characters (Google cuts off longer)</li>
+                            <li>Include keywords naturally</li>
+                            <li>Make each page title unique</li>
+                        </ul>
+                    </div>
+                    <div class="tip-box">
+                        <i class="fas fa-lightbulb"></i> <strong>Best Practices:</strong>
+                        <ul>
+                            <li>Put important keywords first</li>
+                            <li>Use format: "Page Name | Site Name"</li>
+                            <li>Match title with H1 heading</li>
+                            <li>Example: "HTML Tutorial | SyntaxLab"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 15: Tables -->
+            <div class="topic-section" id="section15">
+                <h2>📊 15. HTML Tables <span class="section-badge">Data Organization</span></h2>
+                
+                <p>Tables display data in rows and columns - perfect for spreadsheets, schedules, and comparisons!</p>
+
+                <div class="code-block"><pre>&lt;table&gt;
+  &lt;!-- Table header (bold, centered automatically) --&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Name&lt;/th&gt;
+    &lt;th&gt;Age&lt;/th&gt;
+    &lt;th&gt;City&lt;/th&gt;
+  &lt;/tr&gt;
+  
+  &lt;!-- Table rows with data --&gt;
+  &lt;tr&gt;
+    &lt;td&gt;John&lt;/td&gt;
+    &lt;td&gt;25&lt;/td&gt;
+    &lt;td&gt;New York&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Sarah&lt;/td&gt;
+    &lt;td&gt;30&lt;/td&gt;
+    &lt;td&gt;London&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;!-- Advanced table features --&gt;
+&lt;table border="1" cellpadding="10" cellspacing="0"&gt;
+  &lt;caption&gt;Student Grades&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;&lt;th&gt;Subject&lt;/th&gt;&lt;th&gt;Grade&lt;/th&gt;&lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;&lt;td&gt;Math&lt;/td&gt;&lt;td&gt;A&lt;/td&gt;&lt;/tr&gt;
+  &lt;/tbody&gt;
+  &lt;tfoot&gt;
+    &lt;tr&gt;&lt;td&gt;Average&lt;/td&gt;&lt;td&gt;A&lt;/td&gt;&lt;/tr&gt;
+  &lt;/tfoot&gt;
 &lt;/table&gt;</pre></div>
+
+                <div class="info-box">
+                    <i class="fas fa-merge"></i> <strong>Merging Cells:</strong>
+                    <ul>
+                        <li><code>colspan="2"</code> - merge cells horizontally (same row)</li>
+                        <li><code>rowspan="2"</code> - merge cells vertically (same column)</li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="topic-section">
-                <h2>📝 Forms & Input</h2>
-                <p>Collect user data with forms: text fields, buttons, checkboxes.</p>
-                <div class="code-block"><pre>&lt;form action="/submit"&gt;
-  Name: &lt;input type="text" name="name"&gt;
-  &lt;input type="submit" value="Send"&gt;
-&lt;/form&gt;</pre></div>
+            <!-- SECTION 16: Lists -->
+            <div class="topic-section" id="section16">
+                <h2>📋 16. HTML Lists <span class="section-badge">Item Collections</span></h2>
+                
+                <div class="grid-2col">
+                    <div class="code-block"><pre>&lt;!-- Unordered list (bullets) --&gt;
+&lt;ul&gt;
+  &lt;li&gt;Coffee&lt;/li&gt;
+  &lt;li&gt;Tea&lt;/li&gt;
+  &lt;li&gt;Milk&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- Ordered list (numbers/letters) --&gt;
+&lt;ol type="A"&gt;
+  &lt;li&gt;First step&lt;/li&gt;
+  &lt;li&gt;Second step&lt;/li&gt;
+  &lt;li&gt;Third step&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;!-- Nested lists --&gt;
+&lt;ul&gt;
+  &lt;li&gt;Fruits
+    &lt;ul&gt;
+      &lt;li&gt;Apple&lt;/li&gt;
+      &lt;li&gt;Banana&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Vegetables
+    &lt;ul&gt;
+      &lt;li&gt;Carrot&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</pre></div>
+                    <div class="info-box">
+                        <i class="fas fa-list-ol"></i> <strong>Ordered List Types:</strong>
+                        <ul>
+                            <li><code>type="1"</code> - Numbers (default)</li>
+                            <li><code>type="A"</code> - Uppercase letters</li>
+                            <li><code>type="a"</code> - Lowercase letters</li>
+                            <li><code>type="I"</code> - Roman numerals</li>
+                        </ul>
+                        <strong>Description List:</strong>
+                        <div class="code-block"><pre>&lt;dl&gt;
+  &lt;dt&gt;HTML&lt;/dt&gt;
+  &lt;dd&gt;Structure of web pages&lt;/dd&gt;
+  &lt;dt&gt;CSS&lt;/dt&gt;
+  &lt;dd&gt;Styling language&lt;/dd&gt;
+&lt;/dl&gt;</pre></div>
+                    </div>
+                </div>
             </div>
 
-            <div class="topic-section">
-                <h2>✨ Semantic HTML5</h2>
-                <p>Use &lt;header&gt;, &lt;nav&gt;, &lt;article&gt;, &lt;footer&gt; for better SEO and accessibility.</p>
-                <div class="code-block"><pre>&lt;article&gt;
-  &lt;header&gt;&lt;h2&gt;Blog Post&lt;/h2&gt;&lt;/header&gt;
-  &lt;p&gt;Content here...&lt;/p&gt;
-  &lt;footer&gt;Author: SyntaxLab&lt;/footer&gt;
-&lt;/article&gt;</pre></div>
+            <!-- SECTION 17: Div Element -->
+            <div class="topic-section" id="section17">
+                <h2>📐 17. HTML Div Element <span class="section-badge">Containers</span></h2>
+                
+                <p>The <code class="code-inline">&lt;div&gt;</code> is a block-level container used to group HTML elements for styling and layout.</p>
+
+                <div class="code-block"><pre>&lt;!-- Basic div container --&gt;
+&lt;div style="background-color: #f0f0f0; padding: 20px;"&gt;
+  &lt;h2&gt;Section Title&lt;/h2&gt;
+  &lt;p&gt;This content is grouped together&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- Multiple divs for layout --&gt;
+&lt;div class="header"&gt;Header content&lt;/div&gt;
+&lt;div class="nav"&gt;Navigation links&lt;/div&gt;
+&lt;div class="main"&gt;Main content&lt;/div&gt;
+&lt;div class="footer"&gt;Footer info&lt;/div&gt;
+
+&lt;!-- Grid layout with divs --&gt;
+&lt;div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;"&gt;
+  &lt;div&gt;Column 1&lt;/div&gt;
+  &lt;div&gt;Column 2&lt;/div&gt;
+&lt;/div&gt;</pre></div>
+
+                <div class="info-box">
+                    <i class="fas fa-code-branch"></i> <strong>Div vs Semantic Elements:</strong>
+                    <p>In modern HTML, use semantic tags when possible: <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;footer&gt;</code>. These provide meaning and improve accessibility/SEO.</p>
+                </div>
+            </div>
+
+            <!-- SECTION 18: Class Attribute -->
+            <div class="topic-section" id="section18">
+                <h2>🏫 18. HTML Class Attribute <span class="section-badge">CSS Styling</span></h2>
+                
+                <p>The <code class="code-inline">class</code> attribute groups elements for CSS styling - multiple elements can share the same class!</p>
+
+                <div class="code-block"><pre>&lt;style&gt;
+  .primary-button {
+    background-color: #6366f1;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .card {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 16px;
+    margin: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+&lt;/style&gt;
+
+&lt;button class="primary-button"&gt;Click Me&lt;/button&gt;
+
+&lt;div class="card text-center"&gt;
+  &lt;h3&gt;Multiple Classes&lt;/h3&gt;
+  &lt;p&gt;This uses both "card" and "text-center" classes&lt;/p&gt;
+&lt;/div&gt;</pre></div>
+
+                <div class="tip-box">
+                    <i class="fas fa-graduation-cap"></i> <strong>Class Naming Conventions:</strong>
+                    <ul>
+                        <li>Use lowercase with hyphens: <code>main-header</code></li>
+                        <li>Make names descriptive: <code>error-message</code> not <code>red-text</code></li>
+                        <li>Use BEM methodology: <code>card__title</code>, <code>card__body</code></li>
+                        <li>Multiple classes: <code>class="button button-large button-primary"</code></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- SECTION 19: id Attribute -->
+            <div class="topic-section" id="section19">
+                <h2>🆔 19. HTML id Attribute <span class="section-badge">Unique Identifiers</span></h2>
+                
+                <p>The <code class="code-inline">id</code> attribute provides a UNIQUE identifier for a single element (can't repeat on same page).</p>
+
+                <div class="code-block"><pre>&lt;style&gt;
+  #main-header {
+    background: linear-gradient(135deg, #6366f1, #ec4899);
+    color: white;
+    padding: 20px;
+  }
+  
+  #back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #333;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+  }
+&lt;/style&gt;
+
+&lt;h1 id="main-header"&gt;Welcome to My Site&lt;/h1&gt;
+
+&lt;!-- JavaScript targeting specific element --&gt;
+&lt;button onclick="document.getElementById('main-header').style.display='none'"&gt;
+  Hide Header
+&lt;/button&gt;
+
+&lt;!-- Linking to a specific section --&gt;
+&lt;a href="#section19"&gt;Jump to Section 19&lt;/a&gt;</pre></div>
+
+                <div class="info-box">
+                    <i class="fas fa-id-card"></i> <strong>id vs class - Key Differences:</strong>
+                    <table style="width:100%; margin-top:10px;">
+                        <tr><th>id</th><th>class</th></tr>
+                        <tr><td>Unique (use once per page)</td><td>Can be used many times</td></tr>
+                        <tr><td>CSS selector: #id-name</td><td>CSS selector: .class-name</td></tr>
+                        <tr><td>Higher specificity in CSS</td><td>Lower specificity</td></tr>
+                        <tr><td>Used for JavaScript hooks</td><td>Used for styling groups</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- SECTION 20: Tags List Reference -->
+            <div class="topic-section" id="section20">
+                <h2>📚 20. HTML Tags List <span class="section-badge">Complete Reference</span></h2>
+                
+                <div class="grid-2col">
+                    <div class="info-box">
+                        <i class="fas fa-tag"></i> <strong>Document Structure</strong>
+                        <ul>
+                            <li><code>&lt;!DOCTYPE&gt;</code> - Document type</li>
+                            <li><code>&lt;html&gt;</code> - Root element</li>
+                            <li><code>&lt;head&gt;</code> - Metadata container</li>
+                            <li><code>&lt;body&gt;</code> - Visible content</li>
+                        </ul>
+                    </div>
+                    <div class="info-box">
+                        <i class="fas fa-heading"></i> <strong>Text & Headings</strong>
+                        <ul>
+                            <li><code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code> - Headings</li>
+                            <li><code>&lt;p&gt;</code> - Paragraph</li>
+                            <li><code>&lt;strong&gt;</code> - Important text</li>
+                            <li><code>&lt;em&gt;</code> - Emphasized text</li>
+                        </ul>
+                    </div>
+                    <div class="info-box">
+                        <i class="fas fa-link"></i> <strong>Links & Media</strong>
+                        <ul>
+                            <li><code>&lt;a&gt;</code> - Anchor (link)</li>
+                            <li><code>&lt;img&gt;</code> - Image</li>
+                            <li><code>&lt;video&gt;</code> - Video</li>
+                            <li><code>&lt;audio&gt;</code> - Audio</li>
+                        </ul>
+                    </div>
+                    <div class="info-box">
+                        <i class="fas fa-table"></i> <strong>Lists & Tables</strong>
+                        <ul>
+                            <li><code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code>, <code>&lt;li&gt;</code> - Lists</li>
+                            <li><code>&lt;table&gt;</code>, <code>&lt;tr&gt;</code>, <code>&lt;td&gt;</code>, <code>&lt;th&gt;</code> - Tables</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tip-box">
+                    <i class="fas fa-globe"></i> <strong>Full Reference:</strong> Visit <a href="https://www.w3schools.com/tags/default.asp" target="_blank">W3Schools HTML Tag Reference</a> for all 100+ HTML tags with examples!
+                </div>
+            </div>
+
+            <!-- SECTION 21: Audio/Video -->
+            <div class="topic-section" id="section21">
+                <h2>🎬 21. HTML Audio/Video <span class="section-badge">Multimedia</span></h2>
+                
+                <div class="code-block"><pre>&lt;!-- Video with controls (play, pause, volume) --&gt;
+&lt;video width="640" height="360" controls&gt;
+  &lt;source src="movie.mp4" type="video/mp4"&gt;
+  &lt;source src="movie.ogg" type="video/ogg"&gt;
+  Your browser doesn't support the video tag.
+&lt;/video&gt;
+
+&lt;!-- Audio player --&gt;
+&lt;audio controls&gt;
+  &lt;source src="song.mp3" type="audio/mpeg"&gt;
+  &lt;source src="song.ogg" type="audio/ogg"&gt;
+  Audio not supported.
+&lt;/audio&gt;
+
+&lt;!-- Advanced video with attributes --&gt;
+&lt;video autoplay muted loop poster="thumbnail.jpg"&gt;
+  &lt;source src="background.mp4"&gt;
+&lt;/video&gt;</pre></div>
+
+                <div class="info-box">
+                    <i class="fas fa-play-circle"></i> <strong>Video/Audio Attributes:</strong>
+                    <ul>
+                        <li><code>controls</code> - Shows play/pause buttons</li>
+                        <li><code>autoplay</code> - Starts playing automatically (usually needs muted)</li>
+                        <li><code>loop</code> - Repeats forever</li>
+                        <li><code>muted</code> - Starts with no sound</li>
+                        <li><code>poster</code> - Image shown before video plays</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- SECTION 22: Character Sets -->
+            <div class="topic-section" id="section22">
+                <h2>🔤 22. HTML Character Sets <span class="section-badge">Encoding</span></h2>
+                
+                <p><strong>UTF-8</strong> is the standard character set for HTML5 - it includes every character from all languages!</p>
+
+                <div class="code-block"><pre>&lt;!-- Always include this meta tag for proper encoding --&gt;
+&lt;meta charset="UTF-8"&gt;
+
+&lt;!-- Common character entities (display special characters) --&gt;
+&lt;p&gt;Less than: &amp;lt; &lt; &lt;/p&gt;
+&lt;p&gt;Greater than: &amp;gt; &gt; &lt;/p&gt;
+&lt;p&gt;Ampersand: &amp;amp; &amp; &lt;/p&gt;
+&lt;p&gt;Copyright: &amp;copy; ©&lt;/p&gt;
+&lt;p&gt;Euro symbol: &amp;euro; €&lt;/p&gt;
+&lt;p&gt;Em dash: &amp;mdash; —&lt;/p&gt;
+&lt;p&gt;Non-breaking space: &amp;nbsp; (prevents line break)&lt;/p&gt;</pre></div>
+
+                <div class="info-box">
+                    <i class="fas fa-globe"></i> <strong>Why UTF-8?</strong>
+                    <ul>
+                        <li>Supports over 1 million characters</li>
+                        <li>Includes all languages (Chinese, Arabic, Emoji 😊)</li>
+                        <li>Backward compatible with ASCII</li>
+                        <li>Industry standard everywhere</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- SECTION 23: Country Codes -->
+            <div class="topic-section" id="section23">
+                <h2>🌍 23. HTML Country Codes <span class="section-badge">Localization</span></h2>
+                
+                <p>Use country codes with language codes in the <code>lang</code> attribute for proper localization.</p>
+
+                <div class="code-block"><pre>&lt;!-- English (US) --&gt;
+&lt;html lang="en-US"&gt;
+
+&lt;!-- English (UK) --&gt;
+&lt;html lang="en-GB"&gt;
+
+&lt;!-- Spanish (Spain) --&gt;
+&lt;html lang="es-ES"&gt;
+
+&lt;!-- French (France) --&gt;
+&lt;html lang="fr-FR"&gt;
+
+&lt;!-- German (Germany) --&gt;
+&lt;html lang="de-DE"&gt;
+
+&lt;!-- Japanese --&gt;
+&lt;html lang="ja-JP"&gt;
+
+&lt;!-- Chinese (Simplified) --&gt;
+&lt;html lang="zh-CN"&gt;</pre></div>
+
+                <div class="grid-2col">
+                    <div class="info-box">
+                        <i class="fas fa-language"></i> <strong>Popular Language Codes:</strong>
+                        <ul>
+                            <li>en - English</li>
+                            <li>es - Spanish</li>
+                            <li>fr - French</li>
+                            <li>de - German</li>
+                            <li>it - Italian</li>
+                            <li>pt - Portuguese</li>
+                            <li>ru - Russian</li>
+                            <li>ar - Arabic</li>
+                            <li>hi - Hindi</li>
+                        </ul>
+                    </div>
+                    <div class="tip-box">
+                        <i class="fas fa-lightbulb"></i> <strong>Benefits of lang attribute:</strong>
+                        <ul>
+                            <li>Screen readers use correct pronunciation</li>
+                            <li>Search engines understand language targeting</li>
+                            <li>Browsers offer translation when needed</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 24: Keyboard Shortcuts -->
+            <div class="topic-section" id="section24">
+                <h2>⌨️ 24. Keyboard Shortcuts <span class="section-badge">Productivity</span></h2>
+                
+                <div class="grid-2col">
+                    <div class="info-box">
+                        <i class="fas fa-desktop"></i> <strong>Windows/Linux Shortcuts:</strong>
+                        <ul>
+                            <li><kbd>Ctrl + C</kbd> - Copy</li>
+                            <li><kbd>Ctrl + X</kbd> - Cut</li>
+                            <li><kbd>Ctrl + V</kbd> - Paste</li>
+                            <li><kbd>Ctrl + Z</kbd> - Undo</li>
+                            <li><kbd>Ctrl + Y</kbd> - Redo</li>
+                            <li><kbd>Ctrl + A</kbd> - Select All</li>
+                            <li><kbd>Ctrl + F</kbd> - Find</li>
+                            <li><kbd>Ctrl + S</kbd> - Save</li>
+                            <li><kbd>Ctrl + P</kbd> - Print</li>
+                            <li><kbd>F5</kbd> - Refresh page</li>
+                            <li><kbd>Ctrl + Shift + I</kbd> - DevTools</li>
+                            <li><kbd>Ctrl + U</kbd> - View Source</li>
+                            <li><kbd>Ctrl + T</kbd> - New tab</li>
+                            <li><kbd>Ctrl + W</kbd> - Close tab</li>
+                            <li><kbd>Ctrl + Tab</kbd> - Next tab</li>
+                        </ul>
+                    </div>
+                    <div class="info-box">
+                        <i class="fab fa-apple"></i> <strong>Mac Shortcuts:</strong>
+                        <ul>
+                            <li><kbd>Cmd + C</kbd> - Copy</li>
+                            <li><kbd>Cmd + V</kbd> - Paste</li>
+                            <li><kbd>Cmd + Z</kbd> - Undo</li>
+                            <li><kbd>Cmd + Shift + Z</kbd> - Redo</li>
+                            <li><kbd>Cmd + A</kbd> - Select All</li>
+                            <li><kbd>Cmd + F</kbd> - Find</li>
+                            <li><kbd>Cmd + S</kbd> - Save</li>
+                            <li><kbd>Cmd + R</kbd> - Refresh</li>
+                            <li><kbd>Cmd + Option + I</kbd> - DevTools</li>
+                            <li><kbd>Cmd + U</kbd> - View Source</li>
+                            <li><kbd>Cmd + T</kbd> - New tab</li>
+                            <li><kbd>Cmd + W</kbd> - Close tab</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="practice-card">
+                    <h4><i class="fas fa-challenge"></i> Practice Tip:</h4>
+                    <p>Try writing HTML without touching your mouse for 10 minutes - use shortcuts for everything! It's hard at first but becomes natural with practice.</p>
+                </div>
             </div>
 
             <a href="index.html" class="back-home"><i class="fas fa-arrow-left"></i> Back to Home</a>
@@ -105,7 +1143,51 @@
     </div>
 </div>
 
-<footer class="footer"><p>© 2026 SyntaxLab | HTML Mastery - All rights reserved.</p></footer>
+<footer class="footer">
+    <p>© 2025 SyntaxLab | Complete HTML Tutorial with Detailed Explanations - Based on W3Schools Content</p>
+</footer>
+
 <script src="script.js"></script>
+<script>
+    // AUTO-RESET PROGRESS FUNCTION
+    (function() {
+        const pageKey = 'html.html';
+        const storageKey = `syntaxlab_viewed_${pageKey}`;
+        const sessionFlag = sessionStorage.getItem(`syntaxlab_session_${pageKey}`);
+        
+        if (!sessionFlag) {
+            localStorage.removeItem(storageKey);
+            const topics = document.querySelectorAll('.topic-section');
+            topics.forEach(topic => topic.classList.remove('viewed'));
+            const progressFill = document.querySelector('.progress-fill');
+            const percentSpan = document.querySelector('.progress-percent');
+            if (progressFill) {
+                progressFill.style.width = '0%';
+                if (percentSpan) percentSpan.innerText = '0%';
+            }
+            sessionStorage.setItem(`syntaxlab_session_${pageKey}`, 'visited');
+        }
+        
+        const resetBtn = document.getElementById('hardResetBtn');
+        if (resetBtn) {
+            resetBtn.addEventListener('click', function() {
+                localStorage.removeItem(storageKey);
+                sessionStorage.removeItem(`syntaxlab_session_${pageKey}`);
+                const topics = document.querySelectorAll('.topic-section');
+                topics.forEach(topic => topic.classList.remove('viewed'));
+                const progressFill = document.querySelector('.progress-fill');
+                const percentSpan = document.querySelector('.progress-percent');
+                if (progressFill) {
+                    progressFill.style.width = '0%';
+                    if (percentSpan) percentSpan.innerText = '0%';
+                }
+                const toast = document.createElement('div');
+                toast.innerHTML = `<div style="position:fixed;bottom:20px;right:20px;background:#1e1e2e;color:white;padding:12px 20px;border-radius:12px;z-index:9999;">🔄 All progress reset to 0%! Start fresh.</div>`;
+                document.body.appendChild(toast);
+                setTimeout(() => toast.remove(), 2000);
+            });
+        }
+    })();
+</script>
 </body>
 </html>

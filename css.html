@@ -1,171 +1,1917 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SyntaxLab | Learn CSS</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SyntaxLab | Learn CSS - Complete Tutorial</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* Additional styles for better learning experience */
+    .info-box {
+      background: rgba(99, 102, 241, 0.08);
+      border-left: 4px solid #6366f1;
+      padding: 1rem;
+      margin: 1rem 0;
+      border-radius: 12px;
+    }
+
+    .tip-box {
+      background: rgba(16, 185, 129, 0.08);
+      border-left: 4px solid #10b981;
+      padding: 1rem;
+      margin: 1rem 0;
+      border-radius: 12px;
+    }
+
+    .warning-box {
+      background: rgba(245, 158, 11, 0.08);
+      border-left: 4px solid #f59e0b;
+      padding: 1rem;
+      margin: 1rem 0;
+      border-radius: 12px;
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+    }
+
+    .comparison-table th {
+      background: #6366f1;
+      color: white;
+      padding: 10px;
+    }
+
+    .comparison-table td {
+      border: 1px solid rgba(99, 102, 241, 0.2);
+      padding: 10px;
+    }
+
+    .practice-card {
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(236, 72, 153, 0.05));
+      border-radius: 16px;
+      padding: 1.2rem;
+      margin: 1.2rem 0;
+      border: 1px solid rgba(99, 102, 241, 0.2);
+    }
+
+    .grid-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+
+    @media (max-width: 600px) {
+      .grid-2col {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Sidebar scrolling styles */
+    .topic-list li {
+      transition: all 0.3s ease;
+      cursor: pointer;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid rgba(99, 102, 241, 0.1);
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #4a4a6a;
+      font-weight: 500;
+    }
+
+    .topic-list li:hover {
+      color: #6366f1;
+      transform: translateX(8px);
+      background: rgba(99, 102, 241, 0.05);
+      border-radius: 8px;
+      padding-left: 8px;
+    }
+
+    .topic-list li.active-topic {
+      background: rgba(99, 102, 241, 0.15);
+      border-radius: 8px;
+      color: #6366f1;
+      font-weight: 700;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+
+    .topic-section {
+      scroll-margin-top: 90px;
+    }
+
+    kbd {
+      background: #f0f0f0;
+      border-radius: 4px;
+      padding: 2px 6px;
+      font-family: monospace;
+      font-size: 0.85rem;
+      border: 1px solid #ccc;
+    }
+  </style>
 </head>
+
 <body>
 
-<nav class="navbar">
+  <nav class="navbar">
     <div class="nav-container">
-        <div class="logo-area"><div class="logo-icon"><i class="fab fa-css3-alt"></i></div><span class="logo-text">SyntaxLab</span></div>
-        <div class="nav-links"><a href="index.html" class="nav-link">Home</a></div>
+      <div class="logo-area" onclick="location.href='index.html'">
+        <div class="logo-icon"><i class="fab fa-css3-alt"></i></div>
+        <span class="logo-text">SyntaxLab</span>
+      </div>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+      </div>
     </div>
-</nav>
+  </nav>
 
-<div class="language-container">
+  <div class="language-container">
     <div class="language-header">
-        <h1>Learn CSS</h1>
-        <p class="intro">CSS is the language for styling web pages. It controls layout, colors, fonts, and responsive design.</p>
+      <h1>Learn CSS <span class="badge">Complete Tutorial</span></h1>
+      <p class="intro">CSS (Cascading Style Sheets) is the language we use to style HTML elements. Click any topic in
+        the sidebar to jump directly to that section!</p>
     </div>
 
     <div class="content-grid">
-        <aside class="topics-sidebar">
-            <h3><i class="fas fa-list-ul"></i> Topics</h3>
-            <ul class="topic-list">
-                <li><i class="fas fa-paint-brush"></i> CSS Syntax & Selectors</li>
-                <li><i class="fas fa-palette"></i> Colors & Backgrounds</li>
-                <li><i class="fas fa-font"></i> Typography & Fonts</li>
-                <li><i class="fas fa-border-all"></i> Box Model</li>
-                <li><i class="fas fa-arrows-alt"></i> Flexbox Layout</li>
-                <li><i class="fas fa-th"></i> CSS Grid</li>
-                <li><i class="fas fa-mobile-alt"></i> Responsive Design</li>
-                <li><i class="fas fa-magic"></i> Animations & Transitions</li>
+      <aside class="topics-sidebar">
+        <h3><i class="fas fa-list-ul"></i> Topics</h3>
+        <ul class="topic-list" id="topicList">
+          <!-- 🔰 Basics (Foundation) -->
+          <li data-target="section1"><i class="fas fa-info-circle"></i> 1. CSS Introduction</li>
+          <li data-target="section2"><i class="fas fa-code"></i> 2. CSS Syntax</li>
+          <li data-target="section3"><i class="fas fa-mouse-pointer"></i> 3. CSS Selectors</li>
+          <li data-target="section4"><i class="fas fa-file-code"></i> 4. CSS Types</li>
+          <li data-target="section5"><i class="fas fa-comment"></i> 5. CSS Comments</li>
+          <li data-target="section6"><i class="fas fa-palette"></i> 6. CSS Colors</li>
+          <li data-target="section7"><i class="fas fa-ruler"></i> 7. CSS Units</li>
+          <!-- 📦 Box Model & Layout -->
+          <li data-target="section8"><i class="fas fa-cube"></i> 8. CSS Box Model</li>
+          <li data-target="section9"><i class="fas fa-arrows-alt"></i> 9. CSS Width & Height</li>
+          <li data-target="section10"><i class="fas fa-arrow-left"></i> 10. CSS Margin</li>
+          <li data-target="section11"><i class="fas fa-expand-alt"></i> 11. CSS Padding</li>
+          <li data-target="section12"><i class="fas fa-border-all"></i> 12. CSS Border</li>
+          <li data-target="section13"><i class="fas fa-square"></i> 13. CSS Outline</li>
+          <li data-target="section14"><i class="fas fa-box"></i> 14. CSS Box-Sizing</li>
+          <!-- 🎨 Styling & Design -->
+          <li data-target="section15"><i class="fas fa-image"></i> 15. CSS Backgrounds</li>
+          <li data-target="section16"><i class="fas fa-chart-line"></i> 16. CSS Gradients</li>
+          <li data-target="section17"><i class="fas fa-text-height"></i> 17. CSS Text Effects</li>
+          <li data-target="section18"><i class="fas fa-font"></i> 18. CSS Fonts</li>
+          <li data-target="section19"><i class="fas fa-icons"></i> 19. CSS Icons</li>
+          <li data-target="section20"><i class="fas fa-moon"></i> 20. CSS Shadows</li>
+          <li data-target="section21"><i class="fas fa-eye"></i> 21. CSS Opacity</li>
+          <!-- 🔗 Elements Styling -->
+          <li data-target="section22"><i class="fas fa-link"></i> 22. CSS Links</li>
+          <li data-target="section23"><i class="fas fa-list"></i> 23. CSS Lists</li>
+          <li data-target="section24"><i class="fas fa-table"></i> 24. CSS Tables</li>
+          <li data-target="section25"><i class="fas fa-window-maximize"></i> 25. CSS Forms</li>
+          <li data-target="section26"><i class="fas fa-cube"></i> 26. CSS Buttons</li>
+          <li data-target="section27"><i class="fas fa-image"></i> 27. CSS Images Styling</li>
+          <!-- 📐 Layout Control -->
+          <li data-target="section28"><i class="fas fa-eye"></i> 28. CSS Display</li>
+          <li data-target="section29"><i class="fas fa-arrows-alt"></i> 29. CSS Position</li>
+          <li data-target="section30"><i class="fas fa-layer-group"></i> 30. CSS Z-index</li>
+          <li data-target="section31"><i class="fas fa-water"></i> 31. CSS Overflow</li>
+          <li data-target="section32"><i class="fas fa-ship"></i> 32. CSS Float</li>
+          <li data-target="section33"><i class="fas fa-align-center"></i> 33. CSS Inline-block</li>
+          <!-- ⚡ Advanced Selectors -->
+          <li data-target="section34"><i class="fas fa-code-branch"></i> 34. CSS Combinators</li>
+          <li data-target="section35"><i class="fas fa-tag"></i> 35. CSS Attribute Selectors</li>
+          <li data-target="section36"><i class="fas fa-clock"></i> 36. CSS Pseudo-classes</li>
+          <li data-target="section37"><i class="fas fa-magic"></i> 37. CSS Pseudo-elements</li>
+          <!-- ✨ Effects & Animations -->
+          <li data-target="section38"><i class="fas fa-exchange-alt"></i> 38. CSS Transitions</li>
+          <li data-target="section39"><i class="fas fa-play-circle"></i> 39. CSS Animations</li>
+          <li data-target="section40"><i class="fas fa-arrows-alt"></i> 40. CSS 2D Transforms</li>
+          <li data-target="section41"><i class="fas fa-cube"></i> 41. CSS 3D Transforms</li>
+          <!-- 📱 Modern Layout Systems -->
+          <li data-target="section42"><i class="fas fa-arrows-alt-h"></i> 42. CSS Flexbox</li>
+          <li data-target="section43"><i class="fas fa-th"></i> 43. CSS Grid</li>
+          <!-- 📲 Responsive Design -->
+          <li data-target="section44"><i class="fas fa-mobile-alt"></i> 44. Media Queries</li>
+          <li data-target="section45"><i class="fas fa-tablet-alt"></i> 45. Responsive Grid</li>
+          <li data-target="section46"><i class="fas fa-image"></i> 46. Responsive Images</li>
+          <!-- 🧠 Advanced Concepts -->
+          <li data-target="section47"><i class="fas fa-database"></i> 47. CSS Variables</li>
+          <li data-target="section48"><i class="fas fa-chart-simple"></i> 48. CSS Specificity</li>
+          <li data-target="section49"><i class="fas fa-exclamation-triangle"></i> 49. CSS !important</li>
+          <li data-target="section50"><i class="fas fa-universal-access"></i> 50. CSS Accessibility</li>
+        </ul>
+        <div class="progress-wrapper">
+          <div class="progress-label">
+            <span><i class="fas fa-chart-line"></i> Learning Progress</span>
+            <span class="progress-percent">0%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill"></div>
+          </div>
+          <div class="reset-progress">
+            <button class="reset-btn" id="hardResetBtn"><i class="fas fa-sync-alt"></i> Reset Progress</button>
+          </div>
+        </div>
+        <p style="font-size: 0.7rem; text-align: center; margin-top: 10px; color: #6a6a8a;">
+          <i class="fas fa-mouse-pointer"></i> Click any topic to scroll
+        </p>
+      </aside>
+
+
+      <main class="main-content">
+        <!-- ===== SECTION 1: CSS INTRODUCTION ===== -->
+        <div class="topic-section" id="section1">
+          <h2>🎨 1. CSS Introduction <span class="section-badge">Foundation</span></h2>
+          <p><strong>CSS (Cascading Style Sheets)</strong> is the language we use to style HTML elements. It controls
+            colors, fonts, layouts, and responsive design.</p>
+
+          <div class="info-box">
+            <i class="fas fa-lightbulb"></i> <strong>What makes CSS powerful?</strong>
+            <ul>
+              <li>Separates content (HTML) from presentation (CSS)</li>
+              <li>One CSS file can style an entire website</li>
+              <li>Enables responsive designs for all devices</li>
+              <li>Saves time and makes maintenance easy</li>
             </ul>
-            <div class="progress-wrapper">
-                <div class="progress-label"><span>Progress</span><span class="progress-percent">0%</span></div>
-                <div class="progress-bar"><div class="progress-fill"></div></div>
-            </div>
-        </aside>
+          </div>
 
-        <main class="main-content">
-            <div class="topic-section">
-                <h2>🎨 CSS Syntax & Selectors</h2>
-                <p>CSS consists of selectors and declaration blocks. Selectors target HTML elements to style them.</p>
-                <div class="code-block"><pre>/* Element selector */
+          <div class="code-block">
+            <pre>/* CSS Example - Styling a webpage */
+body {
+    background-color: lightblue;  /* Page background */
+}
+
+h1 {
+    color: white;                 /* Heading color */
+    text-align: center;          /* Center alignment */
+}
+
 p {
-  color: blue;
-  font-size: 16px;
-}
+    font-family: verdana;        /* Font style */
+    font-size: 20px;             /* Text size */
+}</pre>
+          </div>
 
-/* Class selector */
-.btn {
-  background-color: green;
-}
+          <div class="practice-card">
+            <h4><i class="fas fa-pencil-alt"></i> Try It Yourself:</h4>
+            <p>Create a <code>style.css</code> file and link it to your HTML. Change the body background to your
+              favorite color!</p>
+          </div>
 
-/* ID selector */
-#header {
-  text-align: center;
-}</pre></div>
+          <details>
+            <summary><i class="fas fa-question-circle"></i> Why "Cascading"?</summary>
+            <p>"Cascading" refers to the order of priority when multiple CSS rules apply to the same element. Styles
+              cascade from top to bottom, with later rules overriding earlier ones unless specificity rules apply.</p>
+          </details>
+        </div>
+
+        <!-- ===== SECTION 2: CSS SYNTAX ===== -->
+        <div class="topic-section" id="section2">
+          <h2>📝 2. CSS Syntax <span class="section-badge">Structure</span></h2>
+          <p>A CSS rule consists of a <strong>selector</strong> and a <strong>declaration block</strong>.</p>
+
+          <div class="info-box">
+            <i class="fas fa-code"></i> <strong>Syntax Structure:</strong>
+            <code>selector { property: value; }</code>
+          </div>
+
+          <div class="code-block">
+            <pre>/* Selector (targets HTML elements) */
+p {
+    color: red;           /* Property: value */
+    text-align: center;   /* Multiple declarations */
+}</pre>
+          </div>
+
+          <div class="grid-2col">
+            <div class="tip-box">
+              <i class="fas fa-graduation-cap"></i> <strong>Key Points:</strong>
+              <ul>
+                <li>Selectors point to HTML elements</li>
+                <li>Declaration block = { }</li>
+                <li>Each declaration ends with semicolon (;)</li>
+                <li>Property and value separated by colon (:)</li>
+              </ul>
             </div>
+            <div class="warning-box">
+              <i class="fas fa-exclamation-triangle"></i> <strong>Common Mistakes:</strong>
+              <ul>
+                <li>Missing semicolons between declarations</li>
+                <li>Forgetting closing curly brace }</li>
+                <li>Misspelled property names</li>
+              </ul>
+            </div>
+          </div>
+        </div>
 
-            <div class="topic-section">
-                <h2>🎨 Colors & Backgrounds</h2>
-                <p>Use color names, hex codes, RGB, or HSL. Background properties add depth to designs.</p>
-                <div class="code-block"><pre>body {
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  color: #ffffff;
+        <!-- ===== SECTION 3: CSS SELECTORS ===== -->
+        <div class="topic-section" id="section3">
+          <h2>🎯 3. CSS Selectors <span class="section-badge">Targeting Elements</span></h2>
+          <p>Selectors "find" HTML elements to style. There are 5 main categories:</p>
+
+          <table class="comparison-table">
+            <tr>
+              <th>Selector Type</th>
+              <th>Example</th>
+              <th>Description</th>
+            </tr>
+            <tr>
+              <td>Element</td>
+              <td>p { }</td>
+              <td>Selects all &lt;p&gt; elements</td>
+            </tr>
+            <tr>
+              <td>ID (#)</td>
+              <td>#header { }</td>
+              <td>Selects element with id="header" (unique)</td>
+            </tr>
+            <tr>
+              <td>Class (.)</td>
+              <td>.card { }</td>
+              <td>Selects all elements with class="card"</td>
+            </tr>
+            <tr>
+              <td>Universal (*)</td>
+              <td>* { }</td>
+              <td>Selects ALL elements</td>
+            </tr>
+            <tr>
+              <td>Grouping (,)</td>
+              <td>h1, h2, h3 { }</td>
+              <td>Selects multiple elements</td>
+            </tr>
+          </table>
+
+          <div class="code-block">
+            <pre>/* Element selector */
+p { color: blue; }
+
+/* ID selector (unique) */
+#intro { font-size: 20px; }
+
+/* Class selector (reusable) */
+.highlight { background: yellow; }
+
+/* Multiple classes */
+&lt;p class="highlight large"&gt;Text&lt;/p&gt;</pre>
+          </div>
+
+          <div class="practice-card">
+            <h4><i class="fas fa-challenge"></i> Challenge:</h4>
+            <p>Create a class called "btn" that gives buttons a blue background, white text, padding, and rounded
+              corners!</p>
+          </div>
+        </div>
+
+        <!-- ===== SECTION 4: CSS TYPES ===== -->
+        <div class="topic-section" id="section4">
+          <h2>📁 4. CSS Types <span class="section-badge">Inline | Internal | External</span></h2>
+
+          <div class="grid-2col">
+            <div class="info-box">
+              <i class="fas fa-external-link-alt"></i> <strong>External CSS (Best Practice)</strong>
+              <div class="code-block">
+                <pre>&lt;link rel="stylesheet" href="styles.css"&gt;</pre>
+              </div>
+              <p>✓ Reusable across pages<br>✓ Clean HTML<br>✓ Faster loading (cached)</p>
+            </div>
+            <div class="info-box">
+              <i class="fas fa-database"></i> <strong>Internal CSS</strong>
+              <div class="code-block">
+                <pre>&lt;style&gt;
+  body { background: #f0f0f0; }
+&lt;/style&gt;</pre>
+              </div>
+              <p>✓ Single page styling<br>✓ No extra HTTP requests</p>
+            </div>
+            <div class="info-box">
+              <i class="fas fa-code"></i> <strong>Inline CSS (Highest Priority)</strong>
+              <div class="code-block">
+                <pre>&lt;p style="color: red;"&gt;Text&lt;/p&gt;</pre>
+              </div>
+              <p>✓ Quick testing<br>✗ Hard to maintain<br>✗ Not reusable</p>
+            </div>
+          </div>
+
+          <div class="tip-box">
+            <i class="fas fa-star"></i> <strong>Priority Order (Highest to Lowest):</strong> Inline CSS → Internal CSS →
+            External CSS → Browser Defaults
+          </div>
+        </div>
+
+        <!-- ===== SECTION 5: CSS COMMENTS ===== -->
+        <div class="topic-section" id="section5">
+          <h2>💬 5. CSS Comments <span class="section-badge">Documentation</span></h2>
+          <p>Comments help explain code and temporarily disable styles.</p>
+          <div class="code-block">
+            <pre>/* This is a single-line comment */
+
+/*
+  This is a
+  multi-line comment
+*/
+
+/* Temporarily disable a style */
+p {
+    /* color: red; */  /* This line is ignored */
+    font-size: 16px;
+}</pre>
+          </div>
+          <div class="tip-box"><i class="fas fa-lightbulb"></i> <strong>Pro Tip:</strong> Use comments to organize your
+            CSS into sections like /* HEADER */, /* MAIN CONTENT */, /* FOOTER */.</div>
+        </div>
+
+        <!-- ===== SECTION 6: CSS COLORS ===== -->
+        <div class="topic-section" id="section6">
+          <h2>🎨 6. CSS Colors <span class="section-badge">4 Ways to Specify</span></h2>
+          <div class="grid-2col">
+            <div class="info-box"><strong>1. Color Names</strong><br>red, blue, tomato,
+              coral<br><code>color: tomato;</code></div>
+            <div class="info-box"><strong>2. HEX Codes</strong><br>#RRGGBB (00-FF)<br><code>color: #FF6347;</code></div>
+            <div class="info-box"><strong>3.
+                RGB/RGBA</strong><br>rgb(255,99,71)<br>rgba(255,99,71,0.5)<br><code>color: rgb(255, 99, 71);</code>
+            </div>
+            <div class="info-box"><strong>4.
+                HSL/HSLA</strong><br>hsl(9,100%,64%)<br>hsla(9,100%,64%,0.5)<br><code>color: hsl(9, 100%, 64%);</code>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== SECTION 7: CSS UNITS ===== -->
+        <div class="topic-section" id="section7">
+          <h2>📏 7. CSS Units <span class="section-badge">px | % | em | rem | vh | vw</span></h2>
+          <table class="comparison-table">
+            <tr>
+              <th>Unit</th>
+              <th>Type</th>
+              <th>Description</th>
+              <th>Best For</th>
+            </tr>
+            <tr>
+              <td>px</td>
+              <td>Absolute</td>
+              <td>Pixels (1/96 inch)</td>
+              <td>Borders, small elements</td>
+            </tr>
+            <tr>
+              <td>%</td>
+              <td>Relative</td>
+              <td>Percentage of parent</td>
+              <td>Responsive widths</td>
+            </tr>
+            <tr>
+              <td>em</td>
+              <td>Relative</td>
+              <td>Relative to parent font-size</td>
+              <td>Typography within components</td>
+            </tr>
+            <tr>
+              <td>rem</td>
+              <td>Relative</td>
+              <td>Relative to root font-size</td>
+              <td>Accessible typography (PREFERRED)</td>
+            </tr>
+            <tr>
+              <td>vh</td>
+              <td>Viewport</td>
+              <td>1% of viewport height</td>
+              <td>Fullscreen sections</td>
+            </tr>
+            <tr>
+              <td>vw</td>
+              <td>Viewport</td>
+              <td>1% of viewport width</td>
+              <td>Responsive text scaling</td>
+            </tr>
+          </table>
+          <div class="code-block">
+            <pre>html { font-size: 16px; }  /* 1rem = 16px */
+h1 { font-size: 2rem; }    /* 32px */
+.container { width: 80%; } /* 80% of parent width */
+.hero { height: 100vh; }   /* Full viewport height */</pre>
+          </div>
+          <div class="tip-box"><i class="fas fa-universal-access"></i> <strong>Accessibility Tip:</strong> Use rem for
+            font sizes so users can adjust text size in browser settings!</div>
+        </div>
+
+        <!-- ===== SECTION 8: CSS BOX MODEL ===== -->
+        <div class="topic-section" id="section8">
+          <h2>📦 8. CSS Box Model <span class="section-badge">Every element is a box!</span></h2>
+          <div class="info-box"><i class="fas fa-cube"></i> <strong>The Box Model consists of:</strong>
+            <ul>
+              <li><strong>Content</strong> - The actual content (text/images)</li>
+              <li><strong>Padding</strong> - Space inside the border</li>
+              <li><strong>Border</strong> - The edge around padding</li>
+              <li><strong>Margin</strong> - Space outside the border</li>
+            </ul>
+          </div>
+          <div class="code-block">
+            <pre>.box {
+    width: 300px;
+    padding: 20px;   /* Adds space INSIDE */
+    border: 2px solid black;
+    margin: 10px;    /* Adds space OUTSIDE */
+}</pre>
+          </div>
+        </div>
+
+        <!-- ===== SECTION 9: CSS WIDTH & HEIGHT ===== -->
+        <div class="topic-section" id="section9">
+          <h2>📐 9. CSS Width & Height <span class="section-badge">Sizing Elements</span></h2>
+          <div class="code-block">
+            <pre>div {
+    width: 300px;           /* Fixed width */
+    height: 200px;          /* Fixed height */
+    max-width: 100%;        /* Responsive max width */
+    min-height: 100px;      /* Minimum height */
+    width: auto;            /* Browser calculates */
+}</pre>
+          </div>
+          <div class="tip-box">Use max-width instead of width for responsive images!</div>
+        </div>
+
+        <!-- ===== SECTION 10: CSS MARGIN ===== -->
+        <div class="topic-section" id="section10">
+          <h2>⬅️ 10. CSS Margin <span class="section-badge">Space Outside</span></h2>
+          <div class="code-block">
+            <pre>/* All four sides */
+margin: 10px;
+
+/* Top/Bottom Left/Right */
+margin: 10px 20px;
+
+/* Top Right Bottom Left (clockwise) */
+margin: 10px 20px 30px 40px;
+
+/* Individual sides */
+margin-top: 10px;
+margin-right: 20px;
+margin-bottom: 30px;
+margin-left: 40px;
+
+/* Auto centering */
+margin: 0 auto;  /* Centers block elements */</pre>
+          </div>
+          <div class="warning-box">Margin collapses vertically - space between elements = larger margin, not sum!</div>
+        </div>
+
+        <!-- ===== SECTION 11: CSS PADDING ===== -->
+        <div class="topic-section" id="section11">
+          <h2>📏 11. CSS Padding <span class="section-badge">Space Inside</span></h2>
+          <div class="code-block">
+            <pre>/* All four sides */
+padding: 10px;
+
+/* Top/Bottom Left/Right */
+padding: 10px 20px;
+
+/* Top Right Bottom Left */
+padding: 10px 20px 30px 40px;
+
+/* Individual sides (unlike margin, padding NEVER collapses) */
+padding-top: 10px;
+padding-right: 20px;
+padding-bottom: 30px;
+padding-left: 40px;</pre>
+          </div>
+          <div class="tip-box">Padding increases the element's total size, so adjust width accordingly!</div>
+        </div>
+
+        <!-- ===== SECTION 12: CSS BORDER ===== -->
+        <div class="topic-section" id="section12">
+          <h2>🖌️ 12. CSS Border <span class="section-badge">The Edge</span></h2>
+          <div class="code-block">
+            <pre>/* Shorthand: width style color */
+border: 2px solid black;
+
+/* Border styles: solid, dotted, dashed, double, groove, ridge, inset, outset, none */
+border: 3px dotted red;
+
+/* Individual sides */
+border-top: 1px solid blue;
+border-bottom: 2px dashed green;
+
+/* Rounded corners */
+border-radius: 10px;           /* All corners */
+border-radius: 10px 20px;      /* TopLeft/BottomRight TopRight/BottomLeft */
+border-radius: 50%;            /* Circle */</pre>
+          </div>
+        </div>
+
+        <!-- ===== SECTION 13: CSS OUTLINE ===== -->
+        <div class="topic-section" id="section13">
+          <h2>🔲 13. CSS Outline <span class="section-badge">Outside Border</span></h2>
+          <div class="code-block">
+            <pre>/* Outline doesn't affect layout */
+outline: 2px solid red;
+outline-width: 3px;
+outline-style: dotted;
+outline-color: blue;
+outline-offset: 5px;  /* Space between border and outline */</pre>
+          </div>
+          <div class="warning-box">Outline is NOT part of the box model - it doesn't take space or affect layout!</div>
+        </div>
+
+        <!-- ===== SECTION 14: CSS BOX-SIZING ===== -->
+        <div class="topic-section" id="section14">
+          <h2>📦 14. CSS Box-Sizing <span class="section-badge">Life-Changing!</span></h2>
+          <div class="code-block">
+            <pre>/* Default - content-box */
+.box {
+    width: 300px;
+    padding: 20px;    /* Total width = 340px! */
 }
 
+/* Better - border-box (RECOMMENDED) */
+.box {
+    box-sizing: border-box;
+    width: 300px;
+    padding: 20px;    /* Total width = 300px */
+}
+
+/* Reset for all elements */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}</pre>
+          </div>
+          <div class="tip-box"><i class="fas fa-star"></i> Always use border-box! It makes layout predictable!</div>
+        </div>
+
+        <!-- ===== SECTION 15: CSS BACKGROUNDS ===== -->
+        <div class="topic-section" id="section15">
+          <h2>🖼️ 15. CSS Backgrounds <span class="section-badge">Visual Depth</span></h2>
+          <div class="code-block">
+            <pre>body {
+    background-color: #f0f0f0;           /* Solid color */
+    background-image: url('pattern.png'); /* Image */
+    background-repeat: repeat-x;          /* Repeat horizontally */
+    background-position: center;          /* Position */
+    background-size: cover;               /* Cover entire area */
+    background-attachment: fixed;         /* Parallax effect */
+    background: linear-gradient(red, blue); /* Gradient shorhand */
+}</pre>
+          </div>
+        </div>
+
+        <!-- ===== SECTION 16: CSS GRADIENTS ===== -->
+        <div class="topic-section" id="section16">
+          <h2>🌈 16. CSS Gradients <span class="section-badge">Smooth Transitions</span></h2>
+          <div class="code-block">
+            <pre>/* Linear Gradient */
+.gradient1 {
+    background: linear-gradient(to right, red, blue);
+}
+.gradient2 {
+    background: linear-gradient(45deg, red, yellow, green);
+}
+
+/* Radial Gradient */
+.gradient3 {
+    background: radial-gradient(circle, red, blue);
+}
+
+/* Conic Gradient */
+.gradient4 {
+    background: conic-gradient(red, yellow, green, blue, purple);
+}
+
+/* Multiple colors with stops */
+.gradient5 {
+    background: linear-gradient(red 0%, orange 50%, yellow 100%);
+}</pre>
+          </div>
+        </div>
+
+        <!-- ===== SECTION 17: CSS TEXT EFFECTS ===== -->
+        <div class="topic-section" id="section17">
+          <h2>✍️ 17. CSS Text Effects <span class="section-badge">Typography Magic</span></h2>
+          <div class="code-block">
+            <pre>/* Text Overflow (ellipsis) */
+.ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;  /* Shows ... */
+    width: 200px;
+}
+
+/* Word Breaking */
+.wrap {
+    word-wrap: break-word;     /* Break long words */
+    word-break: break-all;     /* Break anywhere */
+}
+
+/* Text Shadow */
+.shadow {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF; /* Multiple */
+}</pre>
+          </div>
+        </div>
+
+        <!-- ===== SECTION 18: CSS FONTS ===== -->
+        <div class="topic-section" id="section18">
+          <h2>🔤 18. CSS Fonts <span class="section-badge">Typography</span></h2>
+          <div class="code-block">
+            <pre>/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans');
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;        /* or 700 */
+    font-style: italic;
+    font-size: 1rem;          /* 16px base */
+    line-height: 1.5;         /* Space between lines */
+    letter-spacing: 1px;      /* Space between letters */
+}
+
+/* Web Safe Fonts */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}</pre>
+          </div>
+        </div>
+
+        <!-- ===== SECTION 19: CSS ICONS ===== -->
+        <div class="topic-section" id="section19">
+          <h2>⭐ 19. CSS Icons <span class="section-badge">Visual Elements</span></h2>
+          <div class="code-block">
+            <pre>&lt;!-- Font Awesome (most popular) --&gt;
+&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"&gt;
+
+&lt;i class="fas fa-heart"&gt;&lt;/i&gt;
+&lt;i class="fas fa-home"&gt;&lt;/i&gt;
+
+/* Style icons */
+i {
+    color: red;
+    font-size: 24px;
+    margin: 10px;
+}</pre>
+          </div>
+        </div>
+
+        <!-- ===== SECTION 20: CSS SHADOWS ===== -->
+        <div class="topic-section" id="section20">
+          <h2>🌑 20. CSS Shadows <span class="section-badge">Depth & Dimension</span></h2>
+          <div class="code-block">
+            <pre>/* Box Shadow: offset-x | offset-y | blur-radius | spread-radius | color */
 .card {
-  background-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-}</pre></div>
-            </div>
-
-            <div class="topic-section">
-                <h2>✍️ Typography & Fonts</h2>
-                <p>Control text appearance with font-family, size, weight, and spacing.</p>
-                <div class="code-block"><pre>h1 {
-  font-family: 'Inter', sans-serif;
-  font-size: 3rem;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  text-transform: uppercase;
-}</pre></div>
-            </div>
-
-            <div class="topic-section">
-                <h2>📦 Box Model</h2>
-                <p>Every element is a box with margin, border, padding, and content.</p>
-                <div class="code-block"><pre>.box {
-  width: 300px;
-  padding: 20px;
-  border: 2px solid #667eea;
-  margin: 10px auto;
-  border-radius: 12px;
-}</pre></div>
-            </div>
-
-            <div class="topic-section">
-                <h2>💪 Flexbox Layout</h2>
-                <p>One-dimensional layout model for distributing space and aligning items.</p>
-                <div class="code-block"><pre>.container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}</pre></div>
-            </div>
-
-            <div class="topic-section">
-                <h2>📐 CSS Grid</h2>
-                <p>Two-dimensional grid-based layout system for complex designs.</p>
-                <div class="code-block"><pre>.grid-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2), 0 6px 6px rgba(0,0,0,0.1); /* Multiple */
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.5); /* Inner shadow */
 }
 
-.item {
-  background: rgba(255,255,255,0.1);
-  padding: 20px;
-}</pre></div>
-            </div>
+/* Text Shadow */
+h1 {
+    text-shadow: 2px 2px 4px #000000;
+}</pre>
+          </div>
+        </div>
 
-            <div class="topic-section">
-                <h2>📱 Responsive Design</h2>
-                <p>Use media queries to adapt layout for different screen sizes.</p>
-                <div class="code-block"><pre>/* Mobile first design */
-@media (max-width: 768px) {
-  .grid-container {
-    grid-template-columns: 1fr;
-  }
-  
-  h1 {
-    font-size: 1.8rem;
-  }
-}</pre></div>
-            </div>
+        <!-- ===== SECTION 21: CSS OPACITY ===== -->
+        <div class="topic-section" id="section21">
+          <h2>👁️ 21. CSS Opacity <span class="section-badge">Transparency</span></h2>
+          <div class="code-block">
+            <pre>img {
+    opacity: 0.5;  /* 50% transparent */
+}
 
-            <div class="topic-section">
-                <h2>✨ Animations & Transitions</h2>
-                <p>Create smooth interactive effects with transitions and keyframe animations.</p>
-                <div class="code-block"><pre>.button {
-  transition: transform 0.3s ease, background 0.3s;
+img:hover {
+    opacity: 1;    /* Fully opaque on hover */
+}
+
+/* Fade in effect */
+.fade {
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+.fade:hover {
+    opacity: 1;
+}</pre>
+          </div>
+        </div>
+
+        <!-- ===== SECTION 22: CSS LINKS ===== -->
+        <div class="topic-section" id="section22">
+          <h2>🔗 22. CSS Links <span class="section-badge">Interactive States</span></h2>
+          <div class="code-block">
+            <pre>/* Order matters: LVHA */
+a:link {
+    color: blue;           /* Unvisited link */
+}
+a:visited {
+    color: purple;         /* Visited link */
+}
+a:hover {
+    color: red;            /* Mouse over */
+    text-decoration: underline;
+}
+a:active {
+    color: green;          /* Clicking moment */
+}
+
+/* Style as buttons */
+a.button {
+    background-color: #6366f1;
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 8px;
+}
+a.button:hover {
+    background-color: #4f52e0;
+}</pre>
+          </div>
+        </div>
+
+        <!-- ===== SECTION 23: CSS LISTS ===== -->
+        <div class="topic-section" id="section23">
+          <h2>📋 23. CSS Lists <span class="section-badge">Bullet Styling</span></h2>
+          <div class="code-block">
+            <pre>ul {
+    list-style-type: square;        /* disc, circle, square, none */
+    list-style-image: url('bullet.png');
+    list-style-position: inside;    /* or outside */
+}
+
+/* Navigation menu */
+.nav-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.nav-menu li {
+    display: inline-block;
+    margin: 0 10px;
+}</pre>
+          </div>
+        </div>
+
+        <!-- ===== SECTION 24: CSS TABLES ===== -->
+        <div class="topic-section" id="section24">
+          <h2>📊 24. CSS Tables <span class="section-badge">Data Presentation</span></h2>
+          <div class="code-block">
+            <pre>table {
+    border-collapse: collapse;   /* Single borders */
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #6366f1;
+    color: white;
+}
+
+/* Zebra striping */
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Hover effect */
+tr:hover {
+    background-color: #e0e0e0;
+}
+
+/* Responsive table */
+.responsive-table {
+    overflow-x: auto;
+}</pre>
+          </div>
+        </div>
+
+        <!-- ===== SECTION 25: CSS FORMS ===== -->
+        <div class="topic-section" id="section25">
+          <h2>📝 25. CSS Forms <span class="section-badge">User Input</span></h2>
+          <div class="code-block">
+            <pre>input[type=text], input[type=email], textarea, select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 8px 0;
+}
+
+/* Focus state */
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #6366f1;
+    box-shadow: 0 0 5px rgba(99,102,241,0.5);
+}
+
+/* Styling buttons */
+input[type=submit] {
+    background: #6366f1;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+/* Invalid input */
+input:invalid {
+    border-color: red;
+}</pre>
+          </div>
+        </div>
+
+        <!-- ===== SECTION 26: CSS BUTTONS ===== -->
+        <div class="topic-section" id="section26">
+          <h2>🔘 26. CSS Buttons <span class="section-badge">Interactive Elements</span></h2>
+          <div class="code-block">
+            <pre>.btn {
+    background: #6366f1;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: #4f52e0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(99,102,241,0.4);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+/* Button sizes */
+.btn-sm { padding: 8px 16px; font-size: 14px; }
+.btn-lg { padding: 16px 32px; font-size: 18px; }
+
+/* Button variations */
+.btn-primary { background: #6366f1; }
+.btn-danger { background: #ef4444; }
+.btn-success { background: #10b981; }</pre>
+          </div>
+        </div>
+
+        <!-- ===== SECTION 27: CSS IMAGES ===== -->
+        <div class="topic-section" id="section27">
+          <h2>🖼️ 27. CSS Images Styling <span class="section-badge">Visual Effects</span></h2>
+          <div class="code-block">
+            <pre>/* Rounded images */
+img {
+    border-radius: 50%;  /* Circle */
+}
+
+/* Filters */
+img {
+    filter: grayscale(100%);    /* Black & white */
+    filter: blur(5px);          /* Blur */
+    filter: brightness(150%);   /* Brightness */
+    filter: contrast(200%);     /* Contrast */
+    filter: sepia(100%);        /* Vintage */
+}
+
+/* Hover effects */
+img {
+    transition: transform 0.3s;
+}
+img:hover {
+    transform: scale(1.05);
+}
+
+/* Centering images */
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}</pre>
+          </div>
+        </div>
+
+        <!-- ===== SECTION 28: CSS DISPLAY ===== -->
+        <div class="topic-section" id="section28">
+          <h2>👁️ 28. CSS Display <span class="section-badge">Box Behavior</span></h2>
+          <div class="code-block">
+            <pre>/* Block - takes full width, starts new line */
+.block {
+    display: block;
+}
+
+/* Inline - takes only needed width, no line break */
+.inline {
+    display: inline;
+}
+
+/* Inline-block - inline but can set width/height */
+.inline-block {
+    display: inline-block;
+}
+
+/* None - hides element completely (removes from layout) */
+.hidden {
+    display: none;
+}
+
+/* Visibility: hidden hides BUT takes space */
+.invisible {
+    visibility: hidden;
+}</pre>
+          </div>
+        </div>
+
+        <!-- ===== SECTION 29: CSS POSITION ===== -->
+        <div class="topic-section" id="section29">
+          <h2>📍 29. CSS Position <span class="section-badge">Placement Control</span></h2>
+          <table class="comparison-table">
+            <tr>
+              <th>Value</th>
+              <th>Description</th>
+              <th>Offset Properties</th>
+            </tr>
+            <tr>
+              <td>static</td>
+              <td>Default. Normal flow</td>
+              <td>Not affected</td>
+            </tr>
+            <tr>
+              <td>relative</td>
+              <td>Relative to normal position</td>
+              <td>top, right, bottom, left</td>
+            </tr>
+            <tr>
+              <td>absolute</td>
+              <td>Relative to nearest positioned ancestor</td>
+              <td>top, right, bottom, left</td>
+            </tr>
+            <tr>
+              <td>fixed</td>
+              <td>Relative to viewport (stays on scroll)</td>
+              <td>top, right, bottom, left</td>
+            </tr>
+            <tr>
+              <td>sticky</td>
+              <td>Sticks when scrolling past</td>
+              <td>top, right, bottom, left</td>
+            </tr>
+          </table>
+          <div class="code-block">
+            <pre>/* Fixed header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+/* Absolute centering */
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Sticky sidebar */
+.sidebar {
+    position: sticky;
+    top: 20px;
+}</pre>
+          </div>
+        </div>
+
+        <!-- ===== SECTION 30: CSS Z-INDEX ===== -->
+        <div class="topic-section" id="section30">
+          <h2>📚 30. CSS Z-index <span class="section-badge">Stack Order</span></h2>
+          <div class="code-block">
+            <pre>/* Higher number = on top */
+.box1 {
+    position: absolute;
+    z-index: 1;
+}
+.box2 {
+    position: absolute;
+    z-index: 2; /* Appears above box1 */
+}
+
+/* For z-index to work, element must have position set (except static) */
+.modal {
+    position: fixed;
+    z-index: 9999;  /* Always on top */
+}</pre>
+          </div>
+        </div>
+
+        <!-- ===== SECTION 31: CSS OVERFLOW ===== -->
+        <div class="topic-section" id="section31">
+          <h2>🌊 31. CSS Overflow <span class="section-badge">Content Handling</span></h2>
+          <div class="code-block">
+            <pre>.container {
+    width: 300px;
+    height: 200px;
+    overflow: visible;   /* Default - content overflows */
+    overflow: hidden;    /* Cut off content */
+    overflow: scroll;    /* Always show scrollbars */
+    overflow: auto;      /* Show scrollbars only when needed */
+    overflow-x: auto;    /* Horizontal only */
+    overflow-y: scroll;  /* Vertical only */
+}</pre>
+          </div>
+        </div>
+
+        <!-- ===== SECTION 32: CSS FLOAT ===== -->
+        <div class="topic-section" id="section32">
+          <h2>⛵ 32. CSS Float <span class="section-badge">Classic Layout</span></h2>
+          <div class="code-block">
+            <pre>img {
+    float: right;   /* Images floats right, text wraps left */
+    margin: 10px;
+}
+
+/* Clearfix to contain floats */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Clear property */
+.clear {
+    clear: both;    /* No floating elements allowed on sides */
+    clear: left;    /* No left floating */
+    clear: right;   /* No right floating */
+}</pre>
+          </div>
+        </div>
+
+        <!-- ===== SECTION 33: CSS INLINE-BLOCK ===== -->
+        <div class="topic-section" id="section33">
+          <h2>📐 33. CSS Inline-block <span class="section-badge">Best of Both</span></h2>
+          <div class="code-block">
+            <pre>.nav-item {
+    display: inline-block;
+    width: 100px;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Fix whitespace issue */
+nav {
+    font-size: 0;  /* Remove space between inline-block elements */
+}
+nav li {
+    font-size: 16px;  /* Reset font size */
+}</pre>
+          </div>
+        </div>
+
+        <!-- ===== SECTION 34: CSS COMBINATORS ===== -->
+        <div class="topic-section" id="section34">
+          <h2>⚡ 34. CSS Combinators <span class="section-badge">Relationships</span></h2>
+          <div class="code-block">
+            <pre>/* Descendant selector (space) - ALL descendants */
+div p {
+    color: red;
+}
+
+/* Child selector (>) - DIRECT children only */
+div > p {
+    color: blue;
+}
+
+/* Adjacent sibling (+) - Immediately after */
+h1 + p {
+    margin-top: 0;
+}
+
+/* General sibling (~) - Any after */
+h1 ~ p {
+    font-style: italic;
+}</pre>
+          </div>
+        </div>
+
+        <!-- ===== SECTION 35: CSS ATTRIBUTE SELECTORS ===== -->
+        <div class="topic-section" id="section35">
+          <h2>🏷️ 35. CSS Attribute Selectors <span class="section-badge">Powerful Filtering</span></h2>
+          <div class="code-block">
+            <pre>/* Has attribute */
+a[target] {
+    background: yellow;
+}
+
+/* Exact match */
+input[type="text"] {
+    width: 100%;
+}
+
+/* Starts with (^) */
+a[href^="https"] {
+    color: green;
+}
+
+/* Ends with ($) */
+a[href$=".pdf"] {
+    background: red;
+}
+
+/* Contains (*) */
+a[href*="w3schools"] {
+    font-weight: bold;
+}</pre>
+          </div>
+        </div>
+
+        <!-- ===== SECTION 36: CSS PSEUDO-CLASSES ===== -->
+        <div class="topic-section" id="section36">
+          <h2>⏰ 36. CSS Pseudo-classes <span class="section-badge">Element States</span></h2>
+          <div class="code-block">
+            <pre>/* Link states */
+a:link, a:visited, a:hover, a:active
+
+/* Structural */
+li:first-child { }   /* First child */
+li:last-child { }    /* Last child */
+li:nth-child(odd) { } /* Odd items */
+li:nth-child(even) { } /* Even items */
+li:nth-child(3) { }    /* Third item */
+
+/* Form states */
+input:focus { }
+input:checked { }
+input:disabled { }
+input:valid { }
+input:invalid { }
+
+/* Other */
+:not(.exclude) { }
+:empty { display: none; }</pre>
+          </div>
+        </div>
+
+        <!-- ===== SECTION 37: CSS PSEUDO-ELEMENTS ===== -->
+        <div class="topic-section" id="section37">
+          <h2>✨ 37. CSS Pseudo-elements <span class="section-badge">Virtual Elements</span></h2>
+          <div class="code-block">
+            <pre>/* First line of text */
+p::first-line {
+    font-weight: bold;
+}
+
+/* First letter */
+p::first-letter {
+    font-size: 200%;
+    color: red;
+}
+
+/* Before content */
+h1::before {
+    content: "★ ";
+    color: gold;
+}
+
+/* After content */
+h1::after {
+    content: " ★";
+    color: gold;
+}
+
+/* Selection color */
+::selection {
+    background: yellow;
+    color: black;
+}
+
+/* Placeholder styling */
+input::placeholder {
+    color: gray;
+    font-style: italic;
+}</pre>
+          </div>
+        </div>
+
+        <!-- ===== SECTION 38: CSS TRANSITIONS ===== -->
+        <div class="topic-section" id="section38">
+          <h2>🔄 38. CSS Transitions <span class="section-badge">Smooth Changes</span></h2>
+          <div class="code-block">
+            <pre>.button {
+    background: blue;
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s;
+    /* Shorthand */
+    transition: all 0.3s ease-in-out;
 }
 
 .button:hover {
-  transform: translateY(-5px);
-  background: #764ba2;
+    background: red;
+    transform: scale(1.1);
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}</pre></div>
-            </div>
+/* Different properties at different speeds */
+.box {
+    transition: background 0.3s, transform 0.5s, opacity 0.2s;
+}</pre>
+          </div>
+        </div>
 
-            <a href="index.html" class="back-home"><i class="fas fa-arrow-left"></i> Back to Home</a>
-        </main>
+        <!-- ===== SECTION 39: CSS ANIMATIONS ===== -->
+        <div class="topic-section" id="section39">
+          <h2>🎬 39. CSS Animations <span class="section-badge">Complex Movements</span></h2>
+          <div class="code-block">
+            <pre>/* Define keyframes */
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+        opacity: 0;
+    }
+    50% {
+        transform: translateX(50px);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateX(100px);
+        opacity: 1;
+    }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-30px); }
+}
+
+/* Apply animation */
+.element {
+    animation-name: slide;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease;
+    /* Shorthand */
+    animation: bounce 1s infinite;
+}</pre>
+          </div>
+        </div>
+
+        <!-- ===== SECTION 40: CSS 2D TRANSFORMS ===== -->
+        <div class="topic-section" id="section40">
+          <h2>🔄 40. CSS 2D Transforms <span class="section-badge">Manipulate Elements</span></h2>
+          <div class="code-block">
+            <pre>.box {
+    transition: transform 0.3s;
+}
+.box:hover {
+    transform: translate(50px, 20px);  /* Move */
+    transform: rotate(45deg);          /* Rotate */
+    transform: scale(1.5);             /* Scale up */
+    transform: scale(0.5);             /* Scale down */
+    transform: skew(10deg);            /* Skew (distort) */
+    transform: matrix(1, 0, 0, 1, 0, 0); /* Matrix combo */
+}
+
+/* Multiple transforms */
+.box:hover {
+    transform: rotate(45deg) scale(1.2) translate(10px);
+}</pre>
+          </div>
+        </div>
+
+        <!-- ===== SECTION 41: CSS 3D TRANSFORMS ===== -->
+        <div class="topic-section" id="section41">
+          <h2>🧊 41. CSS 3D Transforms <span class="section-badge">Three Dimensions</span></h2>
+          <div class="code-block">
+            <pre>/* 3D rotate */
+.card {
+    transform: rotateX(30deg);   /* Tilt forward/back */
+    transform: rotateY(45deg);   /* Rotate left/right */
+    transform: rotateZ(15deg);   /* Rotate 2D */
+}
+
+/* 3D space */
+.container {
+    perspective: 500px;          /* Depth effect */
+    perspective-origin: center;
+}
+
+.card {
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+.card:hover {
+    transform: rotateY(180deg);
+}</pre>
+          </div>
+        </div>
+
+        <!-- ===== SECTION 42: CSS FLEXBOX ===== -->
+        <div class="topic-section" id="section42">
+          <h2>💪 42. CSS Flexbox <span class="section-badge">1D Layout Master</span></h2>
+          <div class="code-block">
+            <pre>.container {
+    display: flex;
+    flex-direction: row | column | row-reverse | column-reverse;
+    justify-content: flex-start | center | space-between | space-around | space-evenly;
+    align-items: stretch | flex-start | flex-end | center | baseline;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Flex items */
+.item {
+    flex: 1;                    /* Grow equally */
+    flex-grow: 2;               /* Grow 2x more */
+    flex-shrink: 1;            /* Allow shrinking */
+    flex-basis: 100px;         /* Base width */
+    align-self: center;        /* Override alignment */
+    order: 2;                  /* Change order */
+}
+
+/* Perfect centering */
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}</pre>
+          </div>
+        </div>
+
+        <!-- ===== SECTION 43: CSS GRID ===== -->
+        <div class="topic-section" id="section43">
+          <h2>📐 43. CSS Grid <span class="section-badge">2D Layout System</span></h2>
+          <div class="code-block">
+            <pre>.grid {
+    display: grid;
+    grid-template-columns: 200px 1fr 200px;   /* Fixed, flexible, fixed */
+    grid-template-columns: repeat(3, 1fr);    /* 3 equal columns */
+    grid-template-rows: auto 200px auto;
+    gap: 20px;
+}
+
+/* Named areas */
+.grid {
+    grid-template-areas:
+        "header header header"
+        "sidebar main main"
+        "footer footer footer";
+}
+.header { grid-area: header; }
+.sidebar { grid-area: sidebar; }
+.main { grid-area: main; }
+.footer { grid-area: footer; }
+
+/* Spanning columns */
+.item {
+    grid-column: span 2;      /* Take 2 columns */
+    grid-row: 1 / 3;          /* Rows 1 to 3 */
+}
+
+/* Responsive grid */
+.grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}</pre>
+          </div>
+        </div>
+
+        <!-- ===== SECTION 44: MEDIA QUERIES ===== -->
+        <div class="topic-section" id="section44">
+          <h2>📱 44. Media Queries <span class="section-badge">Responsive Design</span></h2>
+          <div class="code-block">
+            <pre>/* Mobile First (small to large) */
+.container {
+    grid-template-columns: 1fr;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Print styles */
+@media print {
+    .no-print { display: none; }
+}
+
+/* Dark mode preference */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #1a1a2e;
+        color: white;
+    }
+}</pre>
+          </div>
+        </div>
+
+        <!-- ===== SECTION 45: RESPONSIVE GRID ===== -->
+        <div class="topic-section" id="section45">
+          <h2>📲 45. Responsive Grid <span class="section-badge">12-Column System</span></h2>
+          <div class="code-block">
+            <pre>.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+}
+
+.col-1 { width: 8.33%; }
+.col-2 { width: 16.66%; }
+.col-3 { width: 25%; }
+.col-4 { width: 33.33%; }
+.col-5 { width: 41.66%; }
+.col-6 { width: 50%; }
+.col-7 { width: 58.33%; }
+.col-8 { width: 66.66%; }
+.col-9 { width: 75%; }
+.col-10 { width: 83.33%; }
+.col-11 { width: 91.66%; }
+.col-12 { width: 100%; }
+
+/* Responsive */
+@media only screen and (max-width: 768px) {
+    [class*="col-"] {
+        width: 100%;
+    }
+}</pre>
+          </div>
+        </div>
+
+        <!-- ===== SECTION 46: RESPONSIVE IMAGES ===== -->
+        <div class="topic-section" id="section46">
+          <h2>🖼️ 46. Responsive Images <span class="section-badge">Adapt to Screen</span></h2>
+          <div class="code-block">
+            <pre>/* Fluid images */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Art direction with picture element */
+&lt;picture&gt;
+    &lt;source media="(max-width: 600px)" srcset="small.jpg"&gt;
+    &lt;source media="(max-width: 1200px)" srcset="medium.jpg"&gt;
+    &lt;img src="large.jpg" alt="Responsive"&gt;
+&lt;/picture&gt;
+
+/* Different resolutions for retina */
+img {
+    srcset="image-1x.jpg 1x, image-2x.jpg 2x"
+}</pre>
+          </div>
+        </div>
+
+        <!-- ===== SECTION 47: CSS VARIABLES ===== -->
+        <div class="topic-section" id="section47">
+          <h2>🎯 47. CSS Variables <span class="section-badge">Custom Properties</span></h2>
+          <div class="code-block">
+            <pre>/* Declare variables */
+:root {
+    --primary-color: #6366f1;
+    --secondary-color: #ec4899;
+    --spacing: 16px;
+    --border-radius: 12px;
+}
+
+/* Use variables */
+.button {
+    background: var(--primary-color);
+    padding: var(--spacing);
+    border-radius: var(--border-radius);
+}
+
+/* Fallback value */
+.button {
+    color: var(--primary-color, blue);
+}
+
+/* Change theme easily */
+.dark-theme {
+    --primary-color: #818cf8;
+    --background: #1a1a2e;
+}
+
+/* JavaScript can modify them */
+element.style.setProperty('--primary-color', 'red');</pre>
+          </div>
+        </div>
+
+        <!-- ===== SECTION 48: CSS SPECIFICITY ===== -->
+        <div class="topic-section" id="section48">
+          <h2>⚖️ 48. CSS Specificity <span class="section-badge">Which Rule Wins?</span></h2>
+          <table class="comparison-table">
+            <tr>
+              <th>Selector Type</th>
+              <th>Specificity Score</th>
+              <th>Example</th>
+            </tr>
+            <tr>
+              <td>Inline style</td>
+              <td>1000</td>
+              <td>style="color:red"</td>
+            </tr>
+            <tr>
+              <td>ID selector</td>
+              <td>0100</td>
+              <td>#header</td>
+            </tr>
+            <tr>
+              <td>Class/pseudo-class</td>
+              <td>0010</td>
+              <td>.btn, :hover</td>
+            </tr>
+            <tr>
+              <td>Element selector</td>
+              <td>0001</td>
+              <td>p, div</td>
+            </tr>
+            <tr>
+              <td>Universal (*)</td>
+              <td>0000</td>
+              <td>*</td>
+            </tr>
+          </table>
+          <div class="code-block">
+            <pre>/* More specific = higher priority */
+p { color: black; }           /* Score: 1 */
+.text { color: blue; }        /* Score: 10 (wins) */
+#main p { color: red; }       /* Score: 101 (wins more) */
+
+/* Same specificity? Later rule wins */
+p { color: red; }
+p { color: blue; }  /* Wins */</pre>
+          </div>
+        </div>
+
+        <!-- ===== SECTION 49: CSS !IMPORTANT ===== -->
+        <div class="topic-section" id="section49">
+          <h2>⚠️ 49. CSS !important <span class="section-badge">Nuclear Option</span></h2>
+          <div class="code-block">
+            <pre>/* Overrides EVERYTHING */
+p {
+    color: red !important;
+}
+
+/* Even inline styles won't override */
+&lt;p style="color: blue"&gt;This text is red due to !important&lt;/p&gt;
+
+/* Only another !important can override (with higher specificity) */
+#main p {
+    color: green !important;  /* Wins if more specific */
+}</pre>
+          </div>
+          <div class="warning-box">Use !important SPARINGLY! It breaks natural cascade and makes CSS hard to debug. Only
+            use for utility classes or overriding third-party code.</div>
+        </div>
+
+        <!-- ===== SECTION 50: CSS ACCESSIBILITY ===== -->
+        <div class="topic-section" id="section50">
+          <h2>♿ 50. CSS Accessibility <span class="section-badge">Inclusive Design</span></h2>
+          <div class="grid-2col">
+            <div class="info-box"><i class="fas fa-eye"></i> <strong>1. High Contrast</strong><br>Dark text on light
+              background (ratio 4.5:1 minimum)</div>
+            <div class="info-box"><i class="fas fa-text-height"></i> <strong>2. Readable Fonts</strong><br>Use rem
+              units, min 1rem (16px)</div>
+            <div class="info-box"><i class="fas fa-keyboard"></i> <strong>3. Focus
+                Indicators</strong><br><code>a:focus { outline: 2px solid blue; }</code></div>
+            <div class="info-box"><i class="fas fa-moon"></i> <strong>4. Reduce
+                Motion</strong><br><code>@media (prefers-reduced-motion: reduce) { * { animation: none; } }</code></div>
+          </div>
+          <div class="code-block">
+            <pre>/* Good focus styles */
+button:focus, a:focus, input:focus {
+    outline: 3px solid #6366f1;
+    outline-offset: 2px;
+}
+
+/* Skip to content link (hidden until focused) */
+.skip-link {
+    position: absolute;
+    top: -40px;
+}
+.skip-link:focus {
+    top: 0;
+}
+
+/* Respect user preferences */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Screen reader only text */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+}</pre>
+          </div>
+        </div>
+
+        <a href="index.html" class="back-home"><i class="fas fa-arrow-left"></i> Back to Home</a>
+      </main>
     </div>
-</div>
+  </div>
 
-<footer class="footer"><p>© 2026 SyntaxLab | CSS Mastery - Style the web beautifully.</p></footer>
-<script src="script.js"></script>
+  <footer class="footer">
+    <p>© 2025 SyntaxLab | Complete CSS Tutorial - 50+ Topics with Detailed Explanations</p>
+  </footer>
+
+  <script src="script.js"></script>
+<script>
+    // ===== FULL SCROLLING FUNCTIONALITY FOR ALL TOPICS =====
+    (function() {
+        // Get all topic list items and sections
+        const topicItems = document.querySelectorAll('.topic-list li');
+        const sections = document.querySelectorAll('.topic-section');
+        
+        // Function to scroll to specific section
+        function scrollToSection(sectionId) {
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                // Smooth scroll to the section
+                targetSection.scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'start',
+                    inline: 'nearest'
+                });
+                
+                // Add highlight effect to the section
+                targetSection.style.transition = 'background 0.3s ease, padding 0.3s ease';
+                targetSection.style.background = 'rgba(99, 102, 241, 0.08)';
+                targetSection.style.borderRadius = '16px';
+                targetSection.style.paddingLeft = '20px';
+                
+                setTimeout(() => {
+                    targetSection.style.background = '';
+                    targetSection.style.paddingLeft = '';
+                }, 1000);
+                
+                // Update active topic in sidebar
+                updateActiveTopic(sectionId);
+                
+                // Optional: Update URL hash without jumping
+                history.pushState(null, null, `#${sectionId}`);
+            }
+        }
+        
+        // Function to update active topic highlight in sidebar
+        function updateActiveTopic(activeSectionId) {
+            topicItems.forEach(item => {
+                const targetId = item.getAttribute('data-target');
+                if (targetId === activeSectionId) {
+                    item.classList.add('active-topic');
+                } else {
+                    item.classList.remove('active-topic');
+                }
+            });
+        }
+        
+        // Add click event listeners to all topic items
+        topicItems.forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('data-target');
+                if (targetId) {
+                    scrollToSection(targetId);
+                }
+            });
+        });
+        
+        // Intersection Observer to highlight active topic while scrolling
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '-80px 0px -80px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const sectionId = entry.target.getAttribute('id');
+                    if (sectionId) {
+                        updateActiveTopic(sectionId);
+                    }
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all sections
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+        
+        // Check URL hash on page load and scroll to that section
+        if (window.location.hash) {
+            const hashId = window.location.hash.substring(1);
+            const targetSection = document.getElementById(hashId);
+            if (targetSection) {
+                setTimeout(() => {
+                    scrollToSection(hashId);
+                }, 100);
+            }
+        }
+        
+        // Add keyboard navigation (Alt + 1-9 for first 9 sections)
+        document.addEventListener('keydown', function(e) {
+            if (e.altKey && e.key >= '1' && e.key <= '9') {
+                e.preventDefault();
+                const index = parseInt(e.key) - 1;
+                if (sections[index]) {
+                    scrollToSection(sections[index].getAttribute('id'));
+                }
+            }
+        });
+        
+        // Console log to confirm scrolling is working
+        console.log('✅ CSS Page Loaded - Scrolling functionality active for all 50+ topics!');
+        
+        // Add a small toast notification on first visit
+        if (!sessionStorage.getItem('css_scroll_toast_shown')) {
+            const toast = document.createElement('div');
+            toast.innerHTML = `
+                <div style="position: fixed; bottom: 80px; right: 20px; background: #6366f1; color: white; 
+                            padding: 10px 18px; border-radius: 40px; font-size: 0.8rem; z-index: 9999;
+                            box-shadow: 0 2px 10px rgba(0,0,0,0.2); animation: fadeOut 3s forwards;">
+                    <i class="fas fa-mouse-pointer"></i> Click any topic to scroll!
+                </div>
+                <style>
+                    @keyframes fadeOut {
+                        0% { opacity: 1; transform: translateX(0); }
+                        70% { opacity: 1; }
+                        100% { opacity: 0; transform: translateX(20px); display: none; }
+                    }
+                </style>
+            `;
+            document.body.appendChild(toast);
+            setTimeout(() => toast.remove(), 3500);
+            sessionStorage.setItem('css_scroll_toast_shown', 'true');
+        }
+        
+        // AUTO-RESET PROGRESS FUNCTION
+        const pageKey = 'css.html';
+        const storageKey = `syntaxlab_viewed_${pageKey}`;
+        const sessionFlag = sessionStorage.getItem(`syntaxlab_session_${pageKey}`);
+        
+        if (!sessionFlag) {
+            localStorage.removeItem(storageKey);
+            const topics = document.querySelectorAll('.topic-section');
+            topics.forEach(topic => topic.classList.remove('viewed'));
+            const progressFill = document.querySelector('.progress-fill');
+            const percentSpan = document.querySelector('.progress-percent');
+            if (progressFill) {
+                progressFill.style.width = '0%';
+                if (percentSpan) percentSpan.innerText = '0%';
+            }
+            sessionStorage.setItem(`syntaxlab_session_${pageKey}`, 'visited');
+        }
+        
+        const resetBtn = document.getElementById('hardResetBtn');
+        if (resetBtn) {
+            resetBtn.addEventListener('click', function() {
+                localStorage.removeItem(storageKey);
+                sessionStorage.removeItem(`syntaxlab_session_${pageKey}`);
+                const topics = document.querySelectorAll('.topic-section');
+                topics.forEach(topic => topic.classList.remove('viewed'));
+                const progressFill = document.querySelector('.progress-fill');
+                const percentSpan = document.querySelector('.progress-percent');
+                if (progressFill) {
+                    progressFill.style.width = '0%';
+                    if (percentSpan) percentSpan.innerText = '0%';
+                }
+                const resetToast = document.createElement('div');
+                resetToast.innerHTML = `<div style="position:fixed;bottom:20px;right:20px;background:#1e1e2e;color:white;padding:12px 20px;border-radius:12px;z-index:9999;">🔄 All progress reset to 0%! Start fresh.</div>`;
+                document.body.appendChild(resetToast);
+                setTimeout(() => resetToast.remove(), 2000);
+            });
+        }
+    })();
+</script>
 </body>
 </html>

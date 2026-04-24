@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SyntaxLab | Learn Python</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo-area"><div class="logo-icon"><i class="fab fa-python"></i></div><span class="logo-text">SyntaxLab</span></div>
+        <div class="nav-links"><a href="index.html" class="nav-link">Home</a></div>
+    </div>
+</nav>
+
+<div class="language-container">
+    <div class="language-header">
+        <h1>Learn Python</h1>
+        <p class="intro">Python is a high-level, interpreted programming language known for its simplicity and readability. Perfect for beginners and professionals alike.</p>
+    </div>
+
+    <div class="content-grid">
+        <aside class="topics-sidebar">
+            <h3><i class="fas fa-list-ul"></i> Topics</h3>
+            <ul class="topic-list">
+                <li><i class="fas fa-code"></i> Python Basics & Syntax</li>
+                <li><i class="fas fa-database"></i> Variables & Data Types</li>
+                <li><i class="fas fa-random"></i> Control Flow (if/else)</li>
+                <li><i class="fas fa-repeat"></i> Loops (for, while)</li>
+                <li><i class="fas fa-cube"></i> Functions & Modules</li>
+                <li><i class="fas fa-list"></i> Lists & Dictionaries</li>
+                <li><i class="fas fa-file-alt"></i> File Handling</li>
+                <li><i class="fab fa-python"></i> Object-Oriented Programming</li>
+            </ul>
+            <div class="progress-wrapper">
+                <div class="progress-label">
+                    <span><i class="fas fa-chart-line"></i> Learning Progress</span>
+                    <span class="progress-percent">0%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                <div class="reset-progress">
+                    <button class="reset-btn"><i class="fas fa-sync-alt"></i> Reset Progress</button>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="topic-section">
+                <h2>🐍 Python Basics & Syntax</h2>
+                <p>Python uses indentation instead of braces. The print() function outputs text to the console.</p>
+                <div class="code-block"><pre># This is a comment
+print("Hello, Python!")
+
+# Variables don't need explicit declaration
+name = "SyntaxLab"
+age = 5</pre></div>
+            </div>
+
+            <div class="topic-section">
+                <h2>📦 Variables & Data Types</h2>
+                <p>Python supports integers, floats, strings, booleans, and more. Type is determined automatically.</p>
+                <div class="code-block"><pre># Numeric types
+age = 25                # int
+price = 19.99           # float
+
+# String
+language = "Python"
+
+# Boolean
+is_awesome = True
+
+# Check type
+print(type(age))        # &lt;class 'int'&gt;</pre></div>
+            </div>
+
+            <div class="topic-section">
+                <h2>⚖️ Control Flow (if/else)</h2>
+                <p>Conditional statements control program execution flow.</p>
+                <div class="code-block"><pre>score = 85
+
+if score >= 90:
+    grade = "A"
+elif score >= 70:
+    grade = "B"
+else:
+    grade = "C"
+
+print(f"Your grade is {grade}")</pre></div>
+            </div>
+
+            <div class="topic-section">
+                <h2>🔄 Loops (for, while)</h2>
+                <p>Iterate over sequences or repeat code blocks.</p>
+                <div class="code-block"><pre># For loop
+fruits = ["apple", "banana", "orange"]
+for fruit in fruits:
+    print(fruit)
+
+# Range loop
+for i in range(5):
+    print(f"Count: {i}")
+
+# While loop
+count = 0
+while count < 3:
+    print(f"While loop: {count}")
+    count += 1</pre></div>
+            </div>
+
+            <div class="topic-section">
+                <h2>⚙️ Functions & Modules</h2>
+                <p>Functions organize reusable code. Modules import external functionality.</p>
+                <div class="code-block"><pre># Define a function
+def greet(name):
+    return f"Hello, {name}!"
+
+# Call the function
+message = greet("Python Learner")
+print(message)
+
+# Default parameters
+def multiply(a, b=2):
+    return a * b
+
+# Import module
+import math
+print(math.sqrt(16))  # 4.0</pre></div>
+            </div>
+
+            <div class="topic-section">
+                <h2>📊 Lists & Dictionaries</h2>
+                <p>Lists store ordered collections. Dictionaries store key-value pairs.</p>
+                <div class="code-block"><pre># Lists
+colors = ["red", "green", "blue"]
+colors.append("yellow")
+colors.remove("green")
+
+# List comprehension
+squares = [x**2 for x in range(5)]
+
+# Dictionaries
+person = {
+    "name": "John",
+    "age": 30,
+    "city": "New York"
+}
+print(person["name"])
+
+# Dictionary methods
+person["email"] = "john@example.com"</pre></div>
+            </div>
+
+            <div class="topic-section">
+                <h2>📄 File Handling</h2>
+                <p>Read from and write to files using built-in functions.</p>
+                <div class="code-block"><pre># Writing to file
+with open("data.txt", "w") as file:
+    file.write("Hello Python!\n")
+    file.write("Learning file handling")
+
+# Reading from file
+with open("data.txt", "r") as file:
+    content = file.read()
+    print(content)
+
+# Reading line by line
+with open("data.txt", "r") as file:
+    for line in file:
+        print(line.strip())</pre></div>
+            </div>
+
+            <div class="topic-section">
+                <h2>🏗️ Object-Oriented Programming</h2>
+                <p>Classes and objects enable structured, reusable code.</p>
+                <div class="code-block"><pre>class Student:
+    def __init__(self, name, grade):
+        self.name = name
+        self.grade = grade
+    
+    def display(self):
+        return f"{self.name} scored {self.grade}"
+    
+    @staticmethod
+    def school_name():
+        return "SyntaxLab Academy"
+
+# Create object
+student1 = Student("Alice", "A")
+print(student1.display())
+
+# Inheritance
+class GraduateStudent(Student):
+    def __init__(self, name, grade, thesis):
+        super().__init__(name, grade)
+        self.thesis = thesis</pre></div>
+            </div>
+
+            <a href="index.html" class="back-home"><i class="fas fa-arrow-left"></i> Back to Home</a>
+        </main>
+    </div>
+</div>
+
+<footer class="footer"><p>© 2025 SyntaxLab | Python - Simple, powerful, and versatile.</p></footer>
+<script src="script.js"></script>
+</body>
+</html>
